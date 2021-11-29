@@ -1,12 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-const BtnWrapper = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
 const slideIn = keyframes`
   from { transform: translateX(-250px) skewX(35deg);}
   to { transform: translateX(0px) skew(0deg, 0deg)};
@@ -18,8 +11,8 @@ const slideOut = keyframes`
 `;
 
 const TransButton = styled.button`
-  width: 150px;
-  height: 50px;
+  width: 160px;
+  height: 55px;
   color: white;
   background-color: transparent;
   border: 2px solid white;
@@ -44,12 +37,12 @@ const TransButton = styled.button`
     border-radius: 1px;
     color: black;
     z-index: -1;
-    animation: ${slideOut} 0.35s cubic-bezier(0.5, 0, 0, 0);
+    animation: ${slideOut} 0.3s cubic-bezier(0.5, 0, 0, 0);
     transform: translateX(500px) skewX(-20deg);
   }
   &:hover:after {
     background-color: white;
-    animation: ${slideIn} 0.35s cubic-bezier(0.1, 0.5, 0, 1) forwards;
+    animation: ${slideIn} 0.3s cubic-bezier(0.1, 0.5, 0, 1) forwards;
   }
 `;
 
@@ -57,11 +50,7 @@ const Button = ({ text }) => {
   function onClick() {
     console.log('hi');
   }
-  return (
-    <BtnWrapper>
-      <TransButton>{text}</TransButton>
-    </BtnWrapper>
-  );
+  return <TransButton>{text}</TransButton>;
 };
 
 export default Button;

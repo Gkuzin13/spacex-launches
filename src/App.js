@@ -1,21 +1,16 @@
-import { useEffect, useState } from 'react';
-import client from './utils/fetch';
-import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyles from './GlobalStyles';
+import { theme } from './theme';
 import Main from './pages/Main';
 
-const Logo = styled.span`
-  color: white;
-  font-weight: 400;
-  letter-spacing: 1px;
-`;
-
 function App() {
-  const [data, setData] = useState(null);
-
   return (
-    <>
-      <Main />
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <Main />
+      </>
+    </ThemeProvider>
   );
 }
 

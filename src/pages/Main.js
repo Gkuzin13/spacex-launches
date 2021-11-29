@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import imageSrc from '../assets/launch_fog.jpg';
+import MainSection from '../components/MainSection';
+import Navigation from '../components/Navigation/Navigation';
+
 import client from '../utils/fetch';
-import Button from '../components/Button/Button';
 
 const BgImage = styled.div`
   background: linear-gradient(
@@ -22,6 +24,7 @@ const BgImage = styled.div`
 
 const Main = () => {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     // client('launches/latest').then(
     //   (data) => {
@@ -40,7 +43,8 @@ const Main = () => {
   return (
     <div>
       <BgImage />
-      <Button text={'WATCH WEBCAST'} />
+      <Navigation />
+      <MainSection data={data} />
     </div>
   );
 };

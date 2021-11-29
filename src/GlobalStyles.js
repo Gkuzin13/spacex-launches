@@ -3,7 +3,7 @@ import ExoLight from './assets/fonts/Exo-Light.ttf';
 import ExoRegular from './assets/fonts/Exo-Regular.ttf';
 import ExoBold from './assets/fonts/Exo-Bold.ttf';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'Exo';
   src: url(${ExoLight}) format('ttf'),
@@ -27,6 +27,7 @@ height: 100%;
 body {
 font-family: 'Exo', 'sans-serif';
 line-height: 1.5;
+overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 }
 
@@ -46,6 +47,9 @@ overflow-wrap: break-word;
 #root, #__next {
 isolation: isolate;
 }
+ul, li {
+  list-style: none;
+}
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
