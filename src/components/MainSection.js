@@ -2,13 +2,25 @@ import styled from 'styled-components';
 import Button from '../components/Button';
 
 const InnerSection = styled.div`
+  position: absolute;
+  width: auto;
+  bottom: 15%;
+  left: 25px;
+  right: 25px;
   color: white;
 
+  @media (min-width: 768px) {
+    bottom: 20%;
+    left: 100px;
+    right: 100px;
+  }
+
   h3 {
-    font-weight: 400;
+    font-weight: normal;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
 `;
 

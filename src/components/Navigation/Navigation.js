@@ -1,26 +1,36 @@
-import { useState } from 'react';
-import { NavStyle } from './Navigation.styled';
+import { useRef, useState } from 'react';
+import { NavStyle, NavWrapper } from './Navigation.styled';
 import Menu from '../Menu/Menu';
 import Burger from '../Burger/Burger';
+import useClickOutside from '../../hooks/useClickOutside';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
+  const node = useRef();
+  useClickOutside(node, () => setOpen(false));
 
   return (
-    <div>
-      <span>LOGO</span>
+    <NavWrapper>
+      <span>SpaceX</span>
       <NavStyle>
         <ul>
-          <li>UPCOMING LAUNCH</li>
-          <li>RECENT LAUNCH</li>
-          <li>LAUNCH HISTORY</li>
+          <li>
+            <Link to='/'>UPCOMING LAUNCH</Link>
+          </li>
+          <li>
+            <Link to='/recent'>RECENT LAUNCH</Link>
+          </li>
+          <li>
+            <Link to='/history'>LAUNCH HISTORY</Link>
+          </li>
         </ul>
       </NavStyle>
-      <div>
+      <div ref={node}>
         <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
       </div>
-    </div>
+    </NavWrapper>
   );
 };
 

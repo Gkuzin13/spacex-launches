@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   background: ${({ theme }) => theme.primaryDark};
   height: 100vh;
   text-align: right;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -21,13 +21,14 @@ export const StyledMenu = styled.nav`
     text-align: center;
   }
 
-  a {
+  li {
     font-size: 1rem;
-    padding: 2rem 0;
+    margin: 1rem 0;
+    padding: 0.5rem 0;
     font-weight: bold;
     color: ${({ theme }) => theme.primaryLight};
     text-decoration: none;
-    transition: all 0.35s cubic-bezier(0.1, 0.1, 0.1, 1);
+    transition: all 0.35s;
     &:hover {
       color: ${({ theme }) => theme.primaryHover};
     }

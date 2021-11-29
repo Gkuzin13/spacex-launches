@@ -50,6 +50,10 @@ isolation: isolate;
 ul, li {
   list-style: none;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
 `;
 
 export default GlobalStyles;

@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const NavWrapper = styled.div`
+  padding: 2em;
+
+  span {
+    position: absolute;
+    top: 4%;
+    left: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+`;
+
 export const NavStyle = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -16,9 +29,12 @@ export const NavStyle = styled.nav`
     justify-content: flex-end;
     align-items: center;
   }
-  li {
+
+  a,
+  a:visited {
     cursor: pointer;
     margin-left: 1em;
+    padding: 0.25rem;
     font-weight: 400;
   }
 `;
