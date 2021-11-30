@@ -28,7 +28,7 @@ const MainSection = ({ data }) => {
   console.log(data);
   return (
     <InnerSection>
-      <h3>RECENT LAUNCH</h3>
+      <h3>UPCOMING LAUNCH</h3>
       <h2>{data.name} MISSION</h2>
       <Button text={'WATCH WEBCAST'} />
     </InnerSection>

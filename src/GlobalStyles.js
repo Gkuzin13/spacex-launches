@@ -20,8 +20,8 @@ margin: 0;
 }
 
 html, body {
-font-size: 12px;
-height: 100%;
+ font-size: 12px;
+ height: 100%;
 }
 
 body {
@@ -29,6 +29,7 @@ font-family: 'Exo', 'sans-serif';
 line-height: 1.5;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
+text-shadow: 0 0 1.5px #555;
 }
 
 img, picture, video, canvas, svg {

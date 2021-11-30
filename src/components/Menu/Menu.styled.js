@@ -13,6 +13,7 @@ export const StyledMenu = styled.nav`
   right: 0;
   transition: all 0.7s cubic-bezier(0.1, 0.1, 0.1, 1);
   transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(100%)')};
+  z-index: 9;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     display: flex;

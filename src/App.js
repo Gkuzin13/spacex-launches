@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalStyles from './GlobalStyles';
 import { theme } from './theme';
 import Navigation from './components/Navigation/Navigation';
-import Main from './pages/Main';
-import Main2 from './pages/Main2';
-import Main3 from './pages/Main3';
+import Next from './pages/Next';
+import Recent from './pages/Recent';
+import History from './pages/History';
 
 function App() {
   return (
@@ -15,13 +15,13 @@ function App() {
           <GlobalStyles />
           <Navigation />
           <Routes>
-            <Route path='/' element={<Main />} />
+            <Route path='/' element={<Next />} />
           </Routes>
           <Routes>
-            <Route path='/recent' element={<Main2 />} />
+            <Route path='/recent' element={<Recent />} />
           </Routes>
           <Routes>
-            <Route path='/history' element={<Main3 />} />
+            <Route path='/history' element={<History />} />
           </Routes>
         </>
       </ThemeProvider>
