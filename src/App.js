@@ -4,7 +4,7 @@ import GlobalStyles from './GlobalStyles';
 import { theme } from './theme';
 import Navigation from './components/Navigation/Navigation';
 import Next from './pages/Next';
-import Recent from './pages/Recent';
+import Latest from './pages/Latest';
 import History from './pages/History';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Route path='/' element={<Next />} />
           </Routes>
           <Routes>
-            <Route path='/recent' element={<Recent />} />
+            <Route path='/recent' element={<Latest />} />
           </Routes>
           <Routes>
             <Route path='/history' element={<History />} />

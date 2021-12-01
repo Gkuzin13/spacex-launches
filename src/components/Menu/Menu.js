@@ -7,7 +7,7 @@ const Menu = ({ open, setOpen }) => {
       <ul>
         <li>
           <Link to='/' onClick={() => setOpen(false)}>
-            UPCOMING LAUNCH
+            NEXT LAUNCH
           </Link>
         </li>
         <li>

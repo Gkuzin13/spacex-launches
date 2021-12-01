@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import imageSrc from '../assets/launch.jpg';
 import { BgImage } from '../components/BgImage/BgImage';
+import imgSrc from '../assets/launch_fog.jpg';
 import client from '../utils/fetch';
 import InnerSection from '../components/InnerSection/InnerSection';
-import Button from '../components/Button';
 
-const Next = () => {
+const Latest = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    client('launches/next').then(
+    client('launches/latest').then(
       (data) => {
         console.log(data);
         setData(data);
@@ -25,10 +24,10 @@ const Next = () => {
   }
   return (
     <div>
-      <BgImage img={imageSrc} />
-      <InnerSection data={data} children={Button} />
+      <BgImage img={imgSrc} />
+      <InnerSection data={data} />
     </div>
   );
 };
 
-export default Next;
+export default Latest;

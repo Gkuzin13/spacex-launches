@@ -18,7 +18,7 @@ export const DigitContainer = styled.div`
   align-items: center;
   width: 7rem;
   font-size: 0.8rem;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
 
   @media (max-width: 768px) {
     width: 6.5rem;

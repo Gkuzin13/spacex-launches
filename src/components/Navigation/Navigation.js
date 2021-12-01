@@ -12,11 +12,13 @@ const Navigation = () => {
 
   return (
     <NavWrapper>
-      <span>SpaceX</span>
+      <div>
+        <span>SpaceX</span>
+      </div>
       <NavStyle>
         <ul>
           <li>
-            <Link to='/'>UPCOMING LAUNCH</Link>
+            <Link to='/'>NEXT LAUNCH</Link>
           </li>
           <li>
             <Link to='/recent'>RECENT LAUNCH</Link>

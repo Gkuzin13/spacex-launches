@@ -6,8 +6,7 @@ export const StyledMenu = styled.nav`
   justify-content: flex-start;
   background: ${({ theme }) => theme.primaryDark};
   height: 100vh;
-  text-align: right;
-  padding: 8rem 2rem;
+  padding: 7rem 1rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -19,7 +18,6 @@ export const StyledMenu = styled.nav`
     display: flex;
     width: 55%;
     font-size: 1.5rem;
-    text-align: center;
   }
 
   li {

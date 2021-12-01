@@ -23,6 +23,8 @@ const TransButton = styled.button`
   transition: all 0.15s linear;
   cursor: pointer;
   overflow: hidden;
+  margin-bottom: 1rem;
+
   &:hover {
     color: black;
   }
