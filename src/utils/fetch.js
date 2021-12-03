@@ -1,7 +1,10 @@
 function client(endpoint, customConfig) {
   const baseUrl = 'https://api.spacexdata.com/v4';
+
   const config = {
-    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     ...customConfig,
   };
 

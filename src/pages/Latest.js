@@ -8,7 +8,7 @@ const Latest = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    client('launches/latest').then(
+    client('launches/latest', { method: 'GET' }).then(
       (data) => {
         console.log(data);
         setData(data);

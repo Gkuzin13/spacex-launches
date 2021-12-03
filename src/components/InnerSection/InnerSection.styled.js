@@ -11,7 +11,6 @@ export const Container = styled.div`
   left: 25px;
   right: 25px;
   color: white;
-  overflow: hidden;
 
   @media (min-width: 768px) {
     bottom: 22.5%;

@@ -9,7 +9,7 @@ const Next = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    client('launches/next').then(
+    client('launches/next', { method: 'GET' }).then(
       (data) => {
         console.log(data);
         setData(data);
