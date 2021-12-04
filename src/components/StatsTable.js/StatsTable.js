@@ -17,6 +17,7 @@ const StatsTable = ({ data }) => {
               <th scope='col'>ROCKET</th>
               <th scope='col'>BOOSTER</th>
               <th scope='col'>BOOSTER LANDING</th>
+              <th scope='col'>LAUNCH WEBCAST</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,18 @@ const StatsTable = ({ data }) => {
                   <td data-label='Booster'>{stat.cores[0].core.serial}</td>
                   <td data-label='BOOSTER LANDING'>
                     {stat.cores[0].landing_success ? 'SUCCESS' : 'FAILURE'}
+                  </td>
+                  <td data-label='LAUNCH WEBCAST'>
+                    {stat.links.webcast ? (
+                      <a
+                        href={stat.links.webcast}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        LINK
+                      </a>
+                    ) : (
+                      'N/A'
+                    )}
                   </td>
                 </tr>
               );

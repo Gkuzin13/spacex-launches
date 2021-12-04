@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BgImage } from '../components/BgImage/BgImage';
-import { Container } from './History.styled';
+import { GaugeWrapper } from './History.styled';
 import imgSrc from '../assets/rockets_sunset.jpg';
 import client from '../utils/fetch';
 import Gauge from '../components/Gauge/Gauge';
@@ -70,7 +70,7 @@ const History = () => {
   return (
     <div>
       <BgImage img={imgSrc} />
-      <Container>
+      <GaugeWrapper>
         <Gauge
           stats={stats.missions}
           text={'SUCCESSFUL'}
@@ -84,16 +84,16 @@ const History = () => {
         <Gauge
           stats={stats.reusedBoosters}
           text={'BOOSTERS'}
-          midText={'REUSABILLITY RATE'}
+          midText={'REUSABILITY RATE'}
           percentage={true}
         />
         <Gauge
           stats={stats.reusedFairings}
           text={'FAIRINGS'}
-          midText={'REUSABILLITY RATE'}
+          midText={'REUSABILITY RATE'}
           percentage={true}
         />
-      </Container>
+      </GaugeWrapper>
       <StatsTable data={data} />
     </div>
   );

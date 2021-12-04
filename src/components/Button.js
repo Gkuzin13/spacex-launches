@@ -48,11 +48,11 @@ const TransButton = styled.button`
   }
 `;
 
-const Button = ({ text }) => {
+const Button = ({ text, setVideoOpen, videoOpen }) => {
   function onClick() {
-    console.log('hi');
+    setVideoOpen(!videoOpen);
   }
-  return <TransButton>{text}</TransButton>;
+  return <TransButton onClick={onClick}>{text}</TransButton>;
 };
 
 export default Button;

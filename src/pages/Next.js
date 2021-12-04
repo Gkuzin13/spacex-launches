@@ -6,7 +6,7 @@ import InnerSection from '../components/InnerSection/InnerSection';
 import Button from '../components/Button';
 
 const Next = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     client('launches/next', { method: 'GET' }).then(
@@ -26,7 +26,7 @@ const Next = () => {
   return (
     <div>
       <BgImage img={imageSrc} />
-      <InnerSection data={data} children={Button} />
+      <InnerSection data={data} />
     </div>
   );
 };

@@ -26,7 +26,7 @@ const Gauge = ({ stats, text, midText, percentage }) => {
           d='M 60 95 A 45 45 90 1 1 120 95'
           style={{ fill: 'none' }}
         />
-        <text dominantBaseline='middle' x='50%' y='55%' fill='white'>
+        <text dominantBaseline='middle' x='50%' y='55%'>
           <tspan x='90%' dy='-5%'>
             {text}
           </tspan>

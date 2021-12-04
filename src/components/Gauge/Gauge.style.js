@@ -27,22 +27,24 @@ export const Container = styled.div`
 
   path.grey {
     stroke-width: 4;
-    stroke: rgba(180, 83, 83, 0.35);
+    stroke: rgba(0, 0, 0, 0.2);
   }
 
   path.purple {
-    stroke: rgb(8, 255, 0, 50%);
+    stroke: rgb(50, 139, 254);
     stroke-dasharray: 450;
     stroke-dashoffset: ${(props) => props.offset};
     animation: ${dash} 2s cubic-bezier(0.4, 0.1, 0.1, 1) forwards;
   }
 
   text {
+    fill: rgb(220, 220, 220);
     text-anchor: middle;
     font-size: 0.5rem;
   }
 `;
 
 export const Digit = styled.tspan`
+  fill: white;
   font-size: 1.25rem;
 `;
