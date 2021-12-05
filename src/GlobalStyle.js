@@ -3,7 +3,7 @@ import ExoLight from './assets/fonts/Exo-Light.ttf';
 import ExoRegular from './assets/fonts/Exo-Regular.ttf';
 import ExoBold from './assets/fonts/Exo-Bold.ttf';
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Exo';
   src: url(${ExoLight}) format('ttf'),
@@ -56,6 +56,13 @@ a {
   color: white;
   text-decoration: none;
 }
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+}
 `;
 
-export default GlobalStyles;
+export default GlobalStyle;

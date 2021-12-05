@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const SectionWrapper = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;

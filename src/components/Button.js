@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { CaretRightOutlined } from '@ant-design/icons';
 
 const slideIn = keyframes`
   from { transform: translateX(-250px) skewX(35deg);}
@@ -11,19 +12,21 @@ const slideOut = keyframes`
 `;
 
 const TransButton = styled.button`
-  width: 160px;
-  height: 55px;
+  width: 150px;
+  height: 50px;
   color: white;
-  background-color: transparent;
   border: 2px solid white;
   border-radius: 1px;
   text-align: center;
   font-weight: 600;
   position: relative;
   transition: all 0.15s linear;
-  cursor: pointer;
   overflow: hidden;
   margin-bottom: 1rem;
+
+  svg {
+    font-size: 1.5rem;
+  }
 
   &:hover {
     color: black;

@@ -1,31 +1,22 @@
-import { ThemeProvider } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GlobalStyles from './GlobalStyles';
-import { theme } from './theme';
-import Navigation from './components/Navigation/Navigation';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Next from './pages/Next';
-import Latest from './pages/Latest';
+import Latest from './pages/Latest/Latest';
 import History from './pages/History';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyles />
-          <Navigation />
-          <Routes>
-            <Route path='/' element={<Next />} />
-          </Routes>
-          <Routes>
-            <Route path='/recent' element={<Latest />} />
-          </Routes>
-          <Routes>
-            <Route path='/history' element={<History />} />
-          </Routes>
-        </>
-      </ThemeProvider>
-    </Router>
+    <>
+      <AnimatePresence exitBeforeEnter initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<Next />} />
+          <Route path='/latest' element={<Latest />} />
+          <Route path='/history' element={<History />} />
+        </Routes>
+      </AnimatePresence>
+    </>
   );
 }
 

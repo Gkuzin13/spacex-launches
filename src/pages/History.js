@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { BgImage } from '../components/BgImage/BgImage';
 import { GaugeWrapper } from './History.styled';
 import imgSrc from '../assets/rockets_sunset.jpg';
@@ -6,11 +7,12 @@ import client from '../utils/fetch';
 import Gauge from '../components/Gauge/Gauge';
 import getStats from '../utils/getStats';
 import StatsTable from '../components/StatsTable.js/StatsTable';
+import Navigation from '../components/Navigation/Navigation';
 
 const History = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
-  const stats = getStats(data);
+  const stats = data && getStats(data);
 
   useEffect(() => {
     client('launches/query', {
@@ -64,11 +66,16 @@ const History = () => {
     );
   }, []);
 
-  if (!data && !stats) {
+  if (!data) {
     return <></>;
   }
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}>
+      <Navigation />
       <BgImage img={imgSrc} />
       <GaugeWrapper>
         <Gauge
@@ -95,7 +102,7 @@ const History = () => {
         />
       </GaugeWrapper>
       <StatsTable data={data} />
-    </div>
+    </motion.div>
   );
 };
 

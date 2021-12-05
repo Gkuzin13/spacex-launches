@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import imageSrc from '../assets/launch.jpg';
 import { BgImage } from '../components/BgImage/BgImage';
 import client from '../utils/fetch';
-import InnerSection from '../components/InnerSection/InnerSection';
-import Button from '../components/Button';
-
+import Navigation from '../components/Navigation/Navigation';
 const Next = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     client('launches/next', { method: 'GET' }).then(
@@ -24,10 +23,14 @@ const Next = () => {
     return <></>;
   }
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}>
+      <Navigation />
       <BgImage img={imageSrc} />
-      <InnerSection data={data} />
-    </div>
+    </motion.div>
   );
 };
 

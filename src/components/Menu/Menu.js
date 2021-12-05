@@ -11,8 +11,8 @@ const Menu = ({ open, setOpen }) => {
           </Link>
         </li>
         <li>
-          <Link to='/recent' onClick={() => setOpen(false)}>
-            RECENT LAUNCH
+          <Link to='/latest' onClick={() => setOpen(false)}>
+            LATEST LAUNCH
           </Link>
         </li>
         <li>

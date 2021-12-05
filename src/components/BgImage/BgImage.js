@@ -15,4 +15,5 @@ export const BgImage = styled.div`
   width: 100%;
   min-height: 100%;
   z-index: -99;
+  transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 `;

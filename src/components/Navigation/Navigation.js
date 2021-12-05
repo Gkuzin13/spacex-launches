@@ -13,7 +13,7 @@ const Navigation = () => {
   return (
     <NavWrapper>
       <div>
-        <span>SpaceX</span>
+        <a href='/'>SpaceX</a>
       </div>
       <NavStyle>
         <ul>
@@ -21,7 +21,7 @@ const Navigation = () => {
             <Link to='/'>NEXT LAUNCH</Link>
           </li>
           <li>
-            <Link to='/recent'>RECENT LAUNCH</Link>
+            <Link to='/latest'>RECENT LAUNCH</Link>
           </li>
           <li>
             <Link to='/history'>LAUNCH HISTORY</Link>
