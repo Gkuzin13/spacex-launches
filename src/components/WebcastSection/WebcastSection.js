@@ -1,4 +1,4 @@
-import { RollbackOutlined } from '@ant-design/icons';
+import { CloseOutlined } from '@ant-design/icons';
 import VideoEmbed from '../VideoEmbed/VideoEmbed';
 import { Wrapper, ReturnButton } from './WebcastSection.styled';
 
@@ -10,8 +10,8 @@ const WebcastSection = ({ data, setVideoOpen, videoOpen }) => {
     <Wrapper>
       <VideoEmbed title={data.name} embedId={data.links.youtube_id} />
       <ReturnButton onClick={onClick}>
-        <RollbackOutlined />
-        <span>RETURN</span>
+        <CloseOutlined />
+        <span>CLOSE</span>
       </ReturnButton>
     </Wrapper>
   );

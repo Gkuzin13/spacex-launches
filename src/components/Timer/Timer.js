@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 import { DigitContainer, Container, Digit, Border } from './Timer.styled';
 import { calcTimeLeft } from '../../utils/calcTimeLeft';
 
-const Timer = ({ data }) => {
-  const [timeLeft, setTimeLeft] = useState(
-    calcTimeLeft('Jan 5, 2022 15:37:25')
-  );
+const Timer = ({ date }) => {
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft(date));
 
   useEffect(() => {
     const id = setTimeout(() => {
-      setTimeLeft(calcTimeLeft('Jan 5, 2022 15:37:25'));
+      setTimeLeft(calcTimeLeft(date));
     }, 1000);
 
     return () => clearTimeout(id);
@@ -18,7 +16,7 @@ const Timer = ({ data }) => {
   return (
     <Container>
       <div>
-        <time dateTime={'Jan 5, 2022 15:37:25'} />
+        <time dateTime={date} />
         <DigitContainer>
           <span>DAYS</span>
           <Digit>{timeLeft.days}</Digit>

@@ -30,7 +30,7 @@ line-height: 1.5;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 text-shadow: 0 0 2px #555;
-background-color: rgba(0,0,0,0.93);
+background-color: rgba(0,0,0,1);
 }
 
 img, picture, video, canvas, svg {

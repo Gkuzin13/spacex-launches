@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: 1rem;
+
   button {
     color: white;
     background-color: transparent;

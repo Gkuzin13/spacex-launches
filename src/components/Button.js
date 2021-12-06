@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { CaretRightOutlined } from '@ant-design/icons';
 
 const slideIn = keyframes`
   from { transform: translateX(-250px) skewX(35deg);}

@@ -5,6 +5,7 @@ export const NavWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 2em;
+  margin: 0 2rem;
 
   span {
     position: absolute;
@@ -41,3 +42,5 @@ export const NavStyle = styled.nav`
     font-weight: 400;
   }
 `;
+
+export const LogoWrapper = styled.div``;

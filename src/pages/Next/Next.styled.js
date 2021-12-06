@@ -1,31 +1,22 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const fadeIn = keyframes`
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-`;
-
-export const SectionWrapper = styled.div`
+export const InnerSection = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   width: auto;
   bottom: 50%;
   left: 25px;
   right: 25px;
   color: white;
-  animation: ${fadeIn} 1s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
 
   @media (min-width: 768px) {
-    bottom: 20%;
+    bottom: 22.5%;
     left: 120px;
     right: 120px;
-    flex-direction: ${(props) => props.videoOpen && 'row'};
+    flex-direction: row-reverse;
   }
 
   h3 {

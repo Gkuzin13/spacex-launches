@@ -21,7 +21,7 @@ const StatsTable = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((stat) => {
+            {data.docs.map((stat) => {
               return (
                 <tr key={stat.id}>
                   <td data-label='Launch date'>

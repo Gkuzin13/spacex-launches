@@ -23,15 +23,16 @@ const slideOut = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  flex-direction: column;
-  place-items: center;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   animation: ${fadeIn} 1s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
 `;
 
 export const ReturnButton = styled.button`
-  width: 150px;
-  height: 50px;
+  padding: 0.75rem 0.25rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 1px;
