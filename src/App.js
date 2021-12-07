@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Next from './pages/Next/Next';
 import Latest from './pages/Latest/Latest';
-import History from './pages/History';
+import History from './pages/History/History';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import defaultOptions from './lib/queryDefaults';
 
