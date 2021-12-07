@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import imageSrc from '../../assets/launch.jpg';
+import imageSrc from '../../assets/launch_timelapse.jpg';
 import { BgImage } from '../../components/BgImage/BgImage';
 import Navigation from '../../components/Navigation/Navigation';
 import { InnerSection } from './Next.styled';
@@ -30,7 +29,7 @@ const Next = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.1 }}>
+      transition={{ duration: 0.3 }}>
       <Navigation />
       <BgImage img={imageSrc} />
       <InnerSection>

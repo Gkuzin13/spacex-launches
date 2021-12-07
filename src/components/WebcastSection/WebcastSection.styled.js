@@ -25,14 +25,14 @@ const slideOut = keyframes`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: start;
   width: 100%;
   animation: ${fadeIn} 1s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
 `;
 
 export const ReturnButton = styled.button`
-  padding: 0.75rem 0.25rem;
+  padding: 0.75rem 0.5rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 1px;
@@ -42,10 +42,10 @@ export const ReturnButton = styled.button`
   transition: all 0.15s linear;
   cursor: pointer;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   span {
-    margin: 0 0.5rem;
+    margin: 0 0.25rem;
   }
 
   svg {

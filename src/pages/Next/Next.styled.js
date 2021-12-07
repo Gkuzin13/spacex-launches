@@ -7,7 +7,7 @@ export const InnerSection = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   width: auto;
-  bottom: 50%;
+  bottom: 12%;
   left: 25px;
   right: 25px;
   color: white;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DigitContainer, Container, Digit, Border } from './Timer.styled';
+import { DigitContainer, Container, Digit } from './Timer.styled';
 import { calcTimeLeft } from '../../utils/calcTimeLeft';
 
 const Timer = ({ date }) => {

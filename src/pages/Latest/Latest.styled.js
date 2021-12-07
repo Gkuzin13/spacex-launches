@@ -14,8 +14,7 @@ export const SectionWrapper = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: auto;
-  bottom: 50%;
+  bottom: 12%;
   left: 25px;
   right: 25px;
   color: white;
@@ -23,9 +22,9 @@ export const SectionWrapper = styled.div`
 
   @media (min-width: 768px) {
     bottom: 20%;
-    left: 120px;
-    right: 120px;
-    flex-direction: ${(props) => props.videoOpen && 'row'};
+    left: 15%;
+    right: 15%;
+    ${(props) => props.videoOpen && `flex-direction: row;`}
   }
 
   h3 {
