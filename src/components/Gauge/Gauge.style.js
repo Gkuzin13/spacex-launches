@@ -9,8 +9,6 @@ from {
 `;
 
 export const Container = styled.div`
-  margin: 0 2rem;
-
   div {
     position: absolute;
     right: 0;
@@ -38,7 +36,7 @@ export const Container = styled.div`
   }
 
   text {
-    fill: rgb(220, 220, 220);
+    fill: rgb(222, 222, 222);
     text-anchor: middle;
     font-size: 0.5rem;
   }

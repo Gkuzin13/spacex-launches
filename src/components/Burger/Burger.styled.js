@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 4%;
-  right: 2rem;
-  display: none;
+  top: 35%;
+  right: 6%;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -16,10 +16,6 @@ export const StyledBurger = styled.button`
   z-index: 10;
   transition: all 0.3s linear;
   transform: ${({ open }) => (open ? 'rotate(-90deg)' : 'rotate(0)')};
-
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-    display: flex;
-  }
 
   &:focus {
     outline: none;

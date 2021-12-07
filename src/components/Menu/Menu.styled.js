@@ -1,35 +1,55 @@
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
-  display: none;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   background: ${({ theme }) => theme.primaryDark};
+  width: 55%;
   height: 100vh;
-  padding: 7rem 1rem;
+  padding: 7rem 0rem;
   position: absolute;
   top: 0;
   right: 0;
-  transition: all 0.7s cubic-bezier(0.1, 0.1, 0.1, 1);
-  transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(100%)')};
+  transition: transform 0.7s cubic-bezier(0.1, 0.1, 0.1, 1);
+  transform: ${({ open }) =>
+    open ? 'translateX(0%) skewX(0deg)' : 'translateX(125%) skewX(2.5deg)'};
   z-index: 9;
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  ul {
     display: flex;
-    width: 55%;
-    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-right: 2rem;
   }
 
   li {
     font-size: 1rem;
-    margin: 1rem 0;
-    padding: 0.5rem 0;
+    margin: 1.5rem 0;
     font-weight: bold;
     color: ${({ theme }) => theme.primaryLight};
     text-decoration: none;
-    transition: all 0.35s;
-    &:hover {
-      color: ${({ theme }) => theme.primaryHover};
+    transition: all 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+    a {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        height: 2px;
+        transition: transform 0.15s linear;
+        transform: scaleY(0);
+      }
+      &:hover {
+        &:after {
+          transform: scaleY(1);
+        }
+      }
     }
 
     :first-child {
