@@ -6,51 +6,61 @@ export const TableWrapper = styled.div`
   align-items: center;
   position: relative;
   color: white;
-  background-color: rgba(0, 0, 0, 0.25);
-`;
-
-export const TableScroll = styled.div`
-  height: 200px;
-  margin-top: 5px;
 
   @media screen and (min-width: 768px) {
-    overflow: auto;
+    padding: 0 12rem;
+    margin-top: 5rem;
   }
 `;
 
 export const Table = styled.table`
-  border: 2px solid rgba(250, 250, 250, 0.5);
+  border: 0;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
+  background-color: rgba(250, 250, 250, 0.05);
 
   caption {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 0.5em 0 0.75em;
   }
 
   tr {
-    border: 2px solid rgba(250, 250, 250, 0.5);
+    border: 2px solid transparent;
     padding: 0.35rem;
+    background-color: rgb(16, 16, 19);
   }
 
   th,
   td {
-    padding: 5rem;
+    padding: 0.5rem;
     text-align: center;
   }
 
   th {
+    position: sticky;
+    top: 7rem;
+    background-color: rgb(19, 19, 19);
+    border: 2px rgb(16, 16, 19) solid;
+    padding: 1rem;
     font-size: 1rem;
+    color: rgb(240, 240, 240);
+    font-weight: 100;
   }
 
+  a {
+    font-size: 2rem;
+  }
   @media screen and (max-width: 768px) {
-    border: 0;
+    tr {
+      border: 0;
+      padding: 0;
+    }
 
     caption {
-      font-size: 1.3em;
+      font-size: 2.5rem;
     }
 
     thead {
@@ -59,23 +69,27 @@ export const Table = styled.table`
       height: 1px;
       margin: -1px;
       overflow: hidden;
-      padding: 0;
       position: absolute;
       width: 1px;
     }
 
     tr {
-      border-bottom: 2px solid rgba(250, 250, 250, 0.5);
       display: block;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      background-color: rgb(16, 16, 19);
     }
 
     td {
-      border-bottom: 1px solid #ddd;
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1rem;
       text-align: right;
-      padding: 0.75rem 0;
+      padding: 0.75rem 0.75rem;
+
+      &:first-child {
+        background-color: rgb(40, 40, 40);
+      }
     }
 
     td::before {
@@ -92,5 +106,12 @@ export const Table = styled.table`
     td:last-child {
       border-bottom: 0;
     }
+  }
+`;
+
+export const Td = styled.td`
+  color: ${(props) => (props.success ? 'rgb(37,149,45)' : 'rgb(158,41,50)')};
+  &::before {
+    color: white;
   }
 `;
