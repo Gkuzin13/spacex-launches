@@ -63,6 +63,23 @@ button {
   border: none;
   color: white;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(180, 180, 180) rgb(224, 224, 224);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(9 9 9);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(40 40 40);
+}
 `;
 
 export default GlobalStyle;
