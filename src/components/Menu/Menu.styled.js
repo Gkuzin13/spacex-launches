@@ -41,7 +41,7 @@ export const StyledMenu = styled.nav`
         right: 0;
         background-color: white;
         width: 100%;
-        height: 2px;
+        height: 1.25px;
         transition: transform 0.15s linear;
         transform: scaleY(0);
       }

@@ -1,7 +1,18 @@
-import { Table, TableScroll, TableWrapper, Td } from './StatsTable.styled';
+import { useEffect, useState } from 'react';
+import { Table, TableWrapper, Td } from './StatsTable.styled';
 import { YoutubeFilled } from '@ant-design/icons';
+import Pagination from './Pagination';
 
 const StatsTable = ({ data }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [launchesPerPage, setLaunchesPerPage] = useState(10);
+
+  const indexLastLaunch = currentPage * launchesPerPage;
+  const indexFirstLaunch = indexLastLaunch - launchesPerPage;
+  const currentLaunches = data.docs.slice(indexFirstLaunch, indexLastLaunch);
+
+  const paginate = (pageNum) => setCurrentPage(pageNum);
+
   return (
     <TableWrapper>
       <Table>
@@ -20,14 +31,14 @@ const StatsTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.docs.map((stat) => {
+          {currentLaunches.map((stat) => {
             let boostStatus = stat.cores[0].landing_success;
 
             return (
               <tr key={stat.id}>
                 <td data-label='Misson'>{stat.name}</td>
                 <td data-label='Launch date'>
-                  {new Date(stat.date_local).toUTCString()}
+                  {new Date(stat.date_local).toLocaleString()}
                 </td>
                 <td data-label='Launch location'>{stat.launchpad.locality}</td>
                 <td data-label='Orbit'>{stat.payloads[0].orbit}</td>
@@ -57,6 +68,12 @@ const StatsTable = ({ data }) => {
           })}
         </tbody>
       </Table>
+      <Pagination
+        launchesPerPage={launchesPerPage}
+        currentPage={currentPage}
+        totalLaunches={data.docs.length}
+        paginate={paginate}
+      />
     </TableWrapper>
   );
 };

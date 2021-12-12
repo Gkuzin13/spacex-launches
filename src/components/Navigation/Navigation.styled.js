@@ -10,10 +10,9 @@ export const NavWrapper = styled.div`
   position: fixed;
   z-index: 99;
   transition: background-color 0.35s linear;
-  ${(props) => !props.halfScreenScroll && `background-color: rgb(8,8,10);`};
+  ${(props) => !props.halfScreenScroll && `background-color: rgb(8,8,10)>`};
 
   @media (min-width: 768px) {
-    padding: 4rem 0;
     justify-content: space-around;
   }
 `;
@@ -44,10 +43,10 @@ export const NavStyle = styled.nav`
       right: 0;
       background-color: white;
       width: 100%;
-      height: 2px;
+      height: 1.25px;
       transition: transform 0.15s linear;
       transform: scaleY(0);
-      margin-bottom: -1px;
+      margin-bottom: -2px;
     }
     &:hover {
       &:after {

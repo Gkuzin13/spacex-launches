@@ -11,11 +11,12 @@ import useScrollPosition from '../../hooks/useScrollPosition';
 const Navigation = () => {
   const [open, setOpen] = useState(false);
   const node = useRef();
-
   useClickOutside(node, () => setOpen(false));
+
   const { width, height } = useWindowSize();
   const { scrollY } = useScrollPosition();
-  const halfScreenScroll = scrollY <= height - height;
+  const isMobile = width < 768;
+  const halfScreenScroll = scrollY > height / 2;
 
   return (
     <NavWrapper halfScreenScroll={halfScreenScroll}>
@@ -24,7 +25,13 @@ const Navigation = () => {
           <RocketFilled style={{ fontSize: '32px' }} />
         </a>
       </LogoWrapper>
-      {width > 768 ? (
+      {isMobile || halfScreenScroll ? (
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+      ) : null}
+      {!isMobile && !halfScreenScroll ? (
         <NavStyle>
           <ul>
             <li>
@@ -38,12 +45,7 @@ const Navigation = () => {
             </li>
           </ul>
         </NavStyle>
-      ) : (
-        <div ref={node}>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
-        </div>
-      )}
+      ) : null}
     </NavWrapper>
   );
 };
