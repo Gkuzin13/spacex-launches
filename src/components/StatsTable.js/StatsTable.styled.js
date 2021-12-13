@@ -7,10 +7,10 @@ export const TableWrapper = styled.div`
   flex-direction: column;
   position: relative;
   color: white;
+  background-color: rgb(16, 16, 19);
 
   @media screen and (min-width: 768px) {
-    padding: 0 20rem;
-    padding-bottom: 5rem;
+    margin: 0 16rem;
   }
 `;
 
@@ -20,8 +20,9 @@ export const Table = styled.table`
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 50rem;
   table-layout: fixed;
-  background-color: rgb(25, 25, 25);
+  overflow: hidden;
 
   caption {
     font-size: 2.5rem;
@@ -30,13 +31,13 @@ export const Table = styled.table`
 
   tr {
     border: 2px solid transparent;
-    padding: 0.35rem;
+    padding: 0.5rem;
     background-color: rgb(16, 16, 19);
   }
 
   th,
   td {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
     text-align: center;
     border: 2px rgb(16, 16, 19) solid;
   }
@@ -46,7 +47,7 @@ export const Table = styled.table`
     top: -0.5%;
     background-color: rgb(20, 20, 19);
     border: 2px rgb(20, 20, 19) solid;
-    padding: 1rem;
+    padding: 0.75rem;
     font-size: 1rem;
     color: rgb(240, 240, 240);
     font-weight: 100;
@@ -116,4 +117,11 @@ export const Td = styled.td`
   &::before {
     color: white;
   }
+`;
+
+export const TableBorder = styled.div`
+  margin-top: 0.25rem;
+  background-color: rgb(35, 35, 35);
+  height: 1px;
+  width: 98%;
 `;
