@@ -10,7 +10,7 @@ export const NavWrapper = styled.div`
   position: fixed;
   z-index: 99;
   transition: background-color 0.35s linear;
-  ${(props) => !props.halfScreenScroll && `background-color: rgb(8,8,10)>`};
+  ${(props) => props.userScrolled && `background-color: rgb(8,8,10)`};
 
   @media (min-width: 768px) {
     justify-content: space-around;

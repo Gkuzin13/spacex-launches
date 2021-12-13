@@ -1,37 +1,32 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useClickOutside from '../../hooks/useClickOutside';
+import useScrollPosition from '../../hooks/useScrollPosition';
 import { NavStyle, NavWrapper, LogoWrapper } from './Navigation.styled';
 import { RocketFilled } from '@ant-design/icons';
 import Menu from '../Menu/Menu';
 import Burger from '../Burger/Burger';
-import useClickOutside from '../../hooks/useClickOutside';
-import useWindowSize from '../../hooks/useWindowSize';
-import { Link } from 'react-router-dom';
-import useScrollPosition from '../../hooks/useScrollPosition';
 
-const Navigation = () => {
+const Navigation = ({ isMobile }) => {
   const [open, setOpen] = useState(false);
   const node = useRef();
   useClickOutside(node, () => setOpen(false));
-
-  const { width, height } = useWindowSize();
   const { scrollY } = useScrollPosition();
-  const isMobile = width < 768;
-  const halfScreenScroll = scrollY > height / 2;
+  const userScrolled = scrollY > 50;
 
   return (
-    <NavWrapper halfScreenScroll={halfScreenScroll}>
+    <NavWrapper userScrolled={userScrolled}>
       <LogoWrapper>
         <a href='/'>
           <RocketFilled style={{ fontSize: '32px' }} />
         </a>
       </LogoWrapper>
-      {isMobile || halfScreenScroll ? (
+      {isMobile ? (
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
         </div>
-      ) : null}
-      {!isMobile && !halfScreenScroll ? (
+      ) : (
         <NavStyle>
           <ul>
             <li>
@@ -45,7 +40,7 @@ const Navigation = () => {
             </li>
           </ul>
         </NavStyle>
-      ) : null}
+      )}
     </NavWrapper>
   );
 };
