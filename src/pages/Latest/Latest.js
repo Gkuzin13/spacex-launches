@@ -8,10 +8,14 @@ import Button from '../../components/Button';
 import WebcastSection from '../../components/WebcastSection/WebcastSection';
 import Navigation from '../../components/Navigation/Navigation';
 import { getLatestLaunch } from '../../utils/apiClient';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Latest = () => {
   const { status, data, error } = useQuery(['latest'], getLatestLaunch);
   const [videoOpen, setVideoOpen] = useState(false);
+
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
 
   if (status === 'loading') {
     return <span>Loading...</span>;
@@ -33,7 +37,7 @@ const Latest = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}>
       <BgImage img={imgSrc} />
-      <Navigation />
+      <Navigation isMobile={isMobile} />
       {videoOpen && (
         <SectionWrapper videoOpen={videoOpen}>
           <div>

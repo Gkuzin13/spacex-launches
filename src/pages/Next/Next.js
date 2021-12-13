@@ -7,11 +7,13 @@ import Timer from '../../components/Timer/Timer';
 import SectionDetails from '../../components/SectionDetails/SectionDetails';
 import { getNextLaunch } from '../../utils/apiClient';
 import { useQuery } from 'react-query';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Next = () => {
-  const { status, data, error, isFetching } = useQuery(['next'], getNextLaunch);
+  const { status, data, error } = useQuery(['next'], getNextLaunch);
 
-  console.log(isFetching);
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
 
   if (status === 'loading') {
     return <span>Loading...</span>;
@@ -30,7 +32,7 @@ const Next = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}>
-      <Navigation />
+      <Navigation isMobile={isMobile} />
       <BgImage img={imageSrc} />
       <InnerSection>
         <Timer date={data.date_local} />
