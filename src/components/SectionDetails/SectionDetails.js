@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container } from './/SectionDetails.styled';
 
 const SectionDetails = ({ data }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   if (!data) {
     return (
@@ -13,7 +13,7 @@ const SectionDetails = ({ data }) => {
   }
 
   return (
-    <Container open={open}>
+    <Container open={open} details={data && true}>
       <button onClick={() => setOpen(!open)}>
         {open ? 'HIDE DETAILS' : 'SHOW DETAILS'}
       </button>
