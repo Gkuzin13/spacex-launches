@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const useScrollPosition = () => {
   const [scrollY, setScrollY] = useState({
     scrollY: undefined,
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     function handleScroll() {
       setScrollY({
         scrollY: Math.round(window.scrollY),
