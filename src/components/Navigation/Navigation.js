@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useClickOutside from '../../hooks/useClickOutside';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import { NavStyle, NavWrapper, LogoWrapper } from './Navigation.styled';
-import { RocketFilled } from '@ant-design/icons';
+import { ReactComponent as Logo } from '../../assets/rocketIcon.svg';
 import Menu from '../Menu/Menu';
 import Burger from '../Burger/Burger';
 
@@ -18,7 +18,7 @@ const Navigation = ({ isMobile }) => {
     <NavWrapper userScrolled={userScrolled}>
       <LogoWrapper>
         <a href='/'>
-          <RocketFilled style={{ fontSize: '32px' }} />
+          <Logo />
         </a>
       </LogoWrapper>
       {isMobile ? (
