@@ -1,13 +1,13 @@
+import { useQuery } from 'react-query';
 import { motion } from 'framer-motion';
+import useWindowSize from '../../hooks/useWindowSize';
+import { getNextLaunch } from '../../utils/apiClient';
 import imageSrc from '../../assets/launch_timelapse.jpg';
-import { BgImage } from '../../components/BgImage/BgImage';
+import { BgImage } from '../../components/BgImage/BgImage.styled';
 import Navigation from '../../components/Navigation/Navigation';
-import { InnerSection } from './Next.styled';
+import { InnerSection, Wrapper } from './Next.styled';
 import Timer from '../../components/Timer/Timer';
 import SectionDetails from '../../components/SectionDetails/SectionDetails';
-import { getNextLaunch } from '../../utils/apiClient';
-import { useQuery } from 'react-query';
-import useWindowSize from '../../hooks/useWindowSize';
 
 const Next = () => {
   const { status, data, error } = useQuery(['next'], getNextLaunch);
@@ -33,15 +33,17 @@ const Next = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}>
       <Navigation isMobile={isMobile} />
-      <BgImage img={imageSrc} />
-      <InnerSection>
-        <Timer date={data.date_local} />
-        <div>
-          <h3>NEXT LAUNCH</h3>
-          <h2>{data.name} MISSION</h2>
-          <SectionDetails data={data.details} />
-        </div>
-      </InnerSection>
+      <BgImage imgSrc={imageSrc} />
+      <Wrapper>
+        <InnerSection>
+          <Timer date={data.date_local} />
+          <div>
+            <h3>NEXT LAUNCH</h3>
+            <h2>{data.name} MISSION</h2>
+            <SectionDetails data={data.details} />
+          </div>
+        </InnerSection>
+      </Wrapper>
     </motion.div>
   );
 };
