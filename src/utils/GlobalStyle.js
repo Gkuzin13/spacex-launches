@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import ExoLight from './assets/fonts/Exo-Light.ttf';
-import ExoRegular from './assets/fonts/Exo-Regular.ttf';
-import ExoBold from './assets/fonts/Exo-Bold.ttf';
+import ExoLight from '../assets/fonts/Exo-Light.ttf';
+import ExoRegular from '../assets/fonts/Exo-Regular.ttf';
+import ExoBold from '../assets/fonts/Exo-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -31,6 +31,7 @@ overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
 text-shadow: 0 0 2px #555;
 background-color: rgba(0,0,0,1);
+color: ${(props) => props.theme.white}
 }
 
 img, picture, video, canvas, svg {
