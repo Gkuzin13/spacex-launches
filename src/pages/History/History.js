@@ -16,32 +16,21 @@ const History = () => {
   const { width, height } = useWindowSize();
   const isMobile = width < 768;
 
-  if (status === 'loading') {
-    return <span>Loading...</span>;
-  }
-
-  if (status === 'error') {
-    return <span>Error: {error.message}</span>;
-  }
-
-  if (!data) {
-    return <></>;
-  }
-  console.log(data);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}>
-      <Wrapper>
-        <BgImage imgSrc={imgSrc} />
-        <Navigation height={height} isMobile={isMobile} />
-        <GaugesStats data={data.docs} />
-        {isMobile && <ArrowDown height={height} />}
-        <StatsTable data={data} isMobile={isMobile} />
-      </Wrapper>
+      <BgImage imgSrc={imgSrc} />
+      <Navigation height={height} isMobile={isMobile} />
+      {data && (
+        <Wrapper>
+          <GaugesStats data={data.docs} />
+          {isMobile && <ArrowDown height={height} />}
+          <StatsTable data={data} isMobile={isMobile} />
+        </Wrapper>
+      )}
     </motion.div>
   );
 };

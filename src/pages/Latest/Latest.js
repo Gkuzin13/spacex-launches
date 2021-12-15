@@ -18,18 +18,6 @@ const Latest = () => {
   const { width } = useWindowSize();
   const isMobile = width < 768;
 
-  if (status === 'loading') {
-    return <span>Loading...</span>;
-  }
-
-  if (status === 'error') {
-    return <span>Error: {error.message}</span>;
-  }
-
-  if (!data) {
-    return <></>;
-  }
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,29 +26,31 @@ const Latest = () => {
       transition={{ duration: 0.3 }}>
       <BgImage imgSrc={imgSrc} />
       <Navigation isMobile={isMobile} />
-      <Wrapper>
-        {videoOpen && (
-          <SectionWrapper videoOpen={videoOpen}>
-            <div>
-              <h3>WEBCAST</h3>
+      {data && (
+        <Wrapper>
+          {videoOpen && (
+            <SectionWrapper videoOpen={videoOpen}>
+              <div>
+                <h3>WEBCAST</h3>
+                <h2>{data.name} MISSION</h2>
+                <SectionDetails data={data.details} />
+              </div>
+              <WebcastSection
+                data={data}
+                setVideoOpen={setVideoOpen}
+                videoOpen={videoOpen}
+              />
+            </SectionWrapper>
+          )}
+          {!videoOpen && (
+            <SectionWrapper>
+              <h3>LATEST LAUNCH</h3>
               <h2>{data.name} MISSION</h2>
-              <SectionDetails data={data.details} />
-            </div>
-            <WebcastSection
-              data={data}
-              setVideoOpen={setVideoOpen}
-              videoOpen={videoOpen}
-            />
-          </SectionWrapper>
-        )}
-        {!videoOpen && (
-          <SectionWrapper>
-            <h3>LATEST LAUNCH</h3>
-            <h2>{data.name} MISSION</h2>
-            <Button text={'WATCH WEBCAST'} setVideoOpen={setVideoOpen} />
-          </SectionWrapper>
-        )}
-      </Wrapper>
+              <Button text={'WATCH WEBCAST'} setVideoOpen={setVideoOpen} />
+            </SectionWrapper>
+          )}
+        </Wrapper>
+      )}
     </motion.div>
   );
 };

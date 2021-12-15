@@ -15,17 +15,6 @@ const Next = () => {
   const { width } = useWindowSize();
   const isMobile = width < 768;
 
-  if (status === 'loading') {
-    return <span>Loading...</span>;
-  }
-
-  if (status === 'error') {
-    return <span>Error: {error.message}</span>;
-  }
-  if (!data) {
-    return <></>;
-  }
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -34,16 +23,18 @@ const Next = () => {
       transition={{ duration: 0.3 }}>
       <Navigation isMobile={isMobile} />
       <BgImage imgSrc={imageSrc} />
-      <Wrapper>
-        <InnerSection>
-          <Timer date={data.date_local} />
-          <div>
-            <h3>NEXT LAUNCH</h3>
-            <h2>{data.name} MISSION</h2>
-            <SectionDetails data={data.details} />
-          </div>
-        </InnerSection>
-      </Wrapper>
+      {data && (
+        <Wrapper>
+          <InnerSection>
+            <Timer date={data.date_local} />
+            <div>
+              <h3>NEXT LAUNCH</h3>
+              <h2>{data.name} MISSION</h2>
+              <SectionDetails data={data.details} />
+            </div>
+          </InnerSection>
+        </Wrapper>
+      )}
     </motion.div>
   );
 };
