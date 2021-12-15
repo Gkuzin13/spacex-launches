@@ -9,10 +9,11 @@ export const NavWrapper = styled.div`
   padding: 0 2.5rem;
   position: fixed;
   z-index: 99;
-  transition: background-color 0.35s linear;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   ${(props) => props.userScrolled && `background-color:` + props.theme.black};
 
   @media (min-width: 768px) {
+    height: ${(props) => (props.userScrolled ? '5rem' : '8rem')};
     justify-content: space-around;
   }
 `;
@@ -55,5 +56,10 @@ export const NavStyle = styled.nav`
 `;
 
 export const LogoWrapper = styled.div`
-  width: 20%;
+  margin-right: 10rem;
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+  }
 `;
