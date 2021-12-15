@@ -27,12 +27,12 @@ const getStats = (data) => {
   );
   const reusedBoosters = data.reduce(
     (acc, stat) => {
-      if (stat.cores[0]?.reused) {
-        acc.success++;
-        acc.total++;
-      }
-      if (!stat.cores[0]?.reused && stat.cores[0]?.landing_success) {
-        acc.failure++;
+      if (stat.cores[0]?.landing_success) {
+        if (stat.cores[0]?.reused) {
+          acc.success++;
+        } else {
+          acc.failure++;
+        }
         acc.total++;
       }
       return acc;
@@ -43,12 +43,11 @@ const getStats = (data) => {
     (acc, stat) => {
       if (stat.fairings?.reused) {
         acc.success++;
-        acc.total++;
-      }
-      if (!stat.fairings?.reused) {
+      } else {
         acc.failure++;
-        acc.total++;
       }
+      acc.total++;
+
       return acc;
     },
     { success: 0, failure: 0, total: 0 }
