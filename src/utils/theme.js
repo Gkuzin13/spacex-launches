@@ -1,3 +1,5 @@
+import { keyframes } from 'styled-components';
+
 export const theme = {
   black: 'rgb(16, 16, 19)',
   gray: 'rgb(195, 199, 196)',
@@ -9,3 +11,19 @@ export const theme = {
   primaryHover: '#A9A9A9',
   mobile: '768px',
 };
+
+export const fadeRevealY = keyframes`
+  0% { 
+  transform: translateY(10px);
+  opacity: 0,
+  } 100% {
+  transform: translateY(0px);
+  opacity: 1;`;
+
+export const fadeRevealX = keyframes`
+  0% { 
+  transform: translateX(-10px);
+  opacity: 0,
+  } 100% {
+  transform: translateX(0px);
+  opacity: 1;`;
