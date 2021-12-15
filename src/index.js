@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './GlobalStyle';
-import { theme } from './theme';
+import GlobalStyle from './utils/GlobalStyle';
+import { theme } from './utils/theme';
 
 ReactDOM.render(
   <React.StrictMode>
