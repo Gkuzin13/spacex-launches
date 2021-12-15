@@ -1,40 +1,40 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Table, TableWrapper, Td, TableBorder } from './StatsTable.styled';
-import { YoutubeFilled } from '@ant-design/icons';
+import { Table, TableWrapper, TableBorder } from './StatsTable.styled';
 import Pagination from '../Pagination/Pagination';
+import TableHead from './TableHead';
+import Row from './Row';
 
-const StatsTable = ({ data }) => {
+const StatsTable = ({ data, isMobile }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const launchesPerPage = 8;
+  const launchesPerPage = 10;
   const indexLastLaunch = currentPage * launchesPerPage;
   const indexFirstLaunch = indexLastLaunch - launchesPerPage;
-  const currentLaunches = data.docs.slice(indexFirstLaunch, indexLastLaunch);
+  const currentLaunches = isMobile
+    ? data.docs
+    : data.docs.slice(indexFirstLaunch, indexLastLaunch);
 
   const paginate = (pageNum) => setCurrentPage(pageNum);
+
+  const boosterHasLanded = (attempt, status) => {
+    if (attempt === null && status === null) return 'NO DATA';
+    if (!attempt) return 'NO ATTEMPT';
+    return status ? 'SUCCESS' : 'FAILURE';
+  };
 
   return (
     <TableWrapper>
       <Table>
-        <thead>
-          <tr>
-            <th scope='col'>MISSION</th>
-            <th scope='col'>LAUNCHED</th>
-            <th scope='col'>LOCATION</th>
-            <th scope='col'>ORBIT</th>
-            <th scope='col'>PAYLOAD TYPE</th>
-            <th scope='col'>LAUNCH STATUS</th>
-            <th scope='col'>ROCKET</th>
-            <th scope='col'>BOOSTER</th>
-            <th scope='col'>BOOSTER LANDING</th>
-            <th scope='col'>LAUNCH WEBCAST</th>
-          </tr>
-        </thead>
+        <TableHead />
         <AnimatePresence initial={false} exitBeforeEnter>
           <tbody>
             {currentLaunches.map((stat) => {
-              let boostStatus = stat.cores[0].landing_success;
+              const boostStatus = boosterHasLanded(
+                stat.cores[0].landing_attempt,
+                stat.cores[0].landing_success
+              );
+              const missionStatus = stat.success ? 'SUCCESS' : 'FAILURE';
               return (
                 <motion.tr
                   key={stat.id}
@@ -42,35 +42,11 @@ const StatsTable = ({ data }) => {
                   animate={{ opacity: 1, transform: 'translateY(0%)' }}
                   exit={{ opacity: 0, transform: 'translateY(5%)' }}
                   transition={{ duration: 0.5 }}>
-                  <td data-label='Misson'>{stat.name}</td>
-                  <td data-label='Launch date'>
-                    {new Date(stat.date_local).toLocaleString()}
-                  </td>
-                  <td data-label='Launch location'>
-                    {stat.launchpad.locality}
-                  </td>
-                  <td data-label='Orbit'>{stat.payloads[0].orbit}</td>
-                  <td data-label='Payload type'>{stat.payloads[0].type}</td>
-                  <Td data-label='Launch status' success={stat.success}>
-                    {stat.success ? 'SUCCESS' : 'FAILURE'}
-                  </Td>
-                  <td data-label='Rocket'>{stat.rocket.name}</td>
-                  <td data-label='Booster'>{stat.cores[0].core.serial}</td>
-                  <Td data-label='BOOSTER LANDING' success={boostStatus}>
-                    {boostStatus ? 'SUCCESS' : 'FAILURE'}
-                  </Td>
-                  <td data-label='LAUNCH WEBCAST'>
-                    {stat.links.webcast ? (
-                      <a
-                        href={stat.links.webcast}
-                        target='_blank'
-                        rel='noopener noreferrer'>
-                        <YoutubeFilled />
-                      </a>
-                    ) : (
-                      'N/A'
-                    )}
-                  </td>
+                  <Row
+                    stat={stat}
+                    missionStatus={missionStatus}
+                    boostStatus={boostStatus}
+                  />
                 </motion.tr>
               );
             })}
@@ -78,12 +54,14 @@ const StatsTable = ({ data }) => {
         </AnimatePresence>
       </Table>
       <TableBorder />
-      <Pagination
-        launchesPerPage={launchesPerPage}
-        currentPage={currentPage}
-        totalLaunches={data.docs.length}
-        paginate={paginate}
-      />
+      {!isMobile && (
+        <Pagination
+          launchesPerPage={launchesPerPage}
+          currentPage={currentPage}
+          totalLaunches={data.docs.length}
+          paginate={paginate}
+        />
+      )}
     </TableWrapper>
   );
 };
