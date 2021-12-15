@@ -1,4 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const fadeIn = keyframes`
+0% {
+  opacity: 0;
+} 100% {
+  opacity: 1;
+}
+`;
 
 export const BgImage = styled.div`
   background: linear-gradient(
@@ -12,8 +20,9 @@ export const BgImage = styled.div`
   background-position: center;
   position: fixed;
   top: 0;
+  opacity: 0;
   width: 100%;
   min-height: 100%;
   z-index: -99;
-  transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation: ${fadeIn} 0.5s cubic-bezier(0.4, 0.05, 0.155, 0.6) forwards 0.3s;
 `;

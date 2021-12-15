@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeRevealY } from '../../utils/theme';
 
 export const GaugesWrapper = styled.div`
   display: grid;
@@ -10,6 +11,8 @@ export const GaugesWrapper = styled.div`
   width: 95%;
   height: 100vh;
   margin: 0 auto;
+  animation: ${fadeRevealY} 0.15s ease-in forwards 0.2s;
+  opacity: 0;
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
     grid-template-columns: repeat(4, 1fr);

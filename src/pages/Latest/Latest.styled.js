@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { fadeRevealX } from '../../utils/theme';
 
 const fadeIn = keyframes`
     0% {
@@ -43,9 +44,13 @@ export const SectionWrapper = styled.div`
 
   h3 {
     font-weight: normal;
+    animation: ${fadeRevealX} 0.15s ease-in forwards 0.15s;
+    opacity: 0;
   }
   h2 {
     text-transform: uppercase;
     font-size: 3rem;
+    animation: ${fadeRevealX} 0.15s ease-in forwards 0.2s;
+    opacity: 0;
   }
 `;

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { fadeRevealY } from '../../utils/theme';
 
 export const Wrapper = styled.div`
   position: absolute;
-  bottom: 5%;
+  bottom: 0%;
   width: 100%;
 `;
 
@@ -19,13 +20,17 @@ export const InnerSection = styled.div`
   @media (min-width: 768px) {
     flex-direction: row-reverse;
     width: 75%;
-    height: 32vh;
+    height: 33vh;
   }
 
   h3 {
+    animation: ${fadeRevealY} 0.15s ease-in forwards 0.15s;
+    opacity: 0;
     font-weight: normal;
   }
   h2 {
+    animation: ${fadeRevealY} 0.15s ease-in forwards 0.2s;
+    opacity: 0;
     text-transform: uppercase;
     font-size: 3.2rem;
   }

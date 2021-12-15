@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { fadeRevealX } from '../../utils/theme';
 
 const slideIn = keyframes`
   from { transform: translateX(-250px) skewX(35deg);}
@@ -22,6 +23,8 @@ export const ButtonStyle = styled.button`
   transition: all 0.15s linear;
   overflow: hidden;
   margin-bottom: 1rem;
+  opacity: 0;
+  animation: ${fadeRevealX} 0.15s ease-in forwards 0.25s;
 
   svg {
     font-size: 1.5rem;
