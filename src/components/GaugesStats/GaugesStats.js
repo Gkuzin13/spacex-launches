@@ -7,7 +7,7 @@ const GaugesStats = ({ data }) => {
 
   return (
     <GaugesWrapper>
-      <Gauge stats={stats.missions} text={'SUCCESSFUL'} midText={'MISSIONS'} />
+      <Gauge stats={stats.missions} text={'SUCCESSFUL'} midText={'LAUNCHES'} />
       <Gauge
         stats={stats.boosterLandings}
         text={'SUCCESSFUL'}
@@ -15,14 +15,14 @@ const GaugesStats = ({ data }) => {
       />
       <Gauge
         stats={stats.reusedBoosters}
-        text={'BOOSTERS'}
-        midText={'REUSABILITY RATE'}
+        text={'LAUNCHED WITH'}
+        midText={'REUSED BOOSTER'}
         percentage={true}
       />
       <Gauge
         stats={stats.reusedFairings}
-        text={'FAIRINGS'}
-        midText={'REUSABILITY RATE'}
+        text={'LAUNCHED WITH'}
+        midText={'REUSED FAIRING'}
         percentage={true}
       />
     </GaugesWrapper>
