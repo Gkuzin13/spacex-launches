@@ -6,11 +6,11 @@ export const TableWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  color: white;
-  background-color: rgb(16, 16, 19);
+  background-color: ${(props) => props.theme.black};
 
   @media screen and (min-width: 768px) {
-    margin: 0 16rem;
+    margin: 0 auto;
+    width: 75%;
   }
 `;
 
@@ -20,7 +20,7 @@ export const Table = styled.table`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 50rem;
+  height: 45rem;
   table-layout: fixed;
   overflow: hidden;
 
@@ -31,31 +31,32 @@ export const Table = styled.table`
 
   tr {
     border: 2px solid transparent;
-    padding: 0.5rem;
-    background-color: rgb(16, 16, 19);
+    background-color: ${(props) => props.theme.black};
+  }
+
+  td {
+    padding: 0 0.75rem;
   }
 
   th,
   td {
-    padding: 0.5rem 0.75rem;
     text-align: center;
-    border: 2px rgb(16, 16, 19) solid;
+    border-bottom: 2px ${(props) => props.theme.darkGray} solid;
   }
 
   th {
-    position: sticky;
-    top: -0.5%;
-    background-color: rgb(20, 20, 19);
-    border: 2px rgb(20, 20, 19) solid;
+    background-color: ${(props) => props.theme.darkGray};
+    border: 2px rgb(21, 21, 21) solid;
     padding: 0.75rem;
     font-size: 1rem;
-    color: rgb(240, 240, 240);
+    color: ${(props) => props.theme.light};
     font-weight: 100;
   }
 
   a {
     font-size: 2rem;
   }
+
   @media screen and (max-width: 768px) {
     tr {
       border: 0;
@@ -79,7 +80,7 @@ export const Table = styled.table`
     tr {
       display: block;
       margin-bottom: 1rem;
-      background-color: rgb(16, 16, 19);
+      background-color: ${(props) => props.theme.black};
     }
 
     td {
@@ -91,7 +92,7 @@ export const Table = styled.table`
       padding: 0.75rem 0.75rem;
 
       &:first-child {
-        background-color: rgb(24, 25, 25);
+        background-color: ${(props) => props.theme.darkGray};
       }
     }
 
@@ -113,7 +114,11 @@ export const Table = styled.table`
 `;
 
 export const Td = styled.td`
-  color: ${(props) => (props.success ? 'rgb(37,149,45)' : 'rgb(158,41,50)')};
+  ${(props) => props.status === 'SUCCESS' && 'color: rgb(37,149,45)'};
+  ${(props) => props.status === 'FAILURE' && 'color: rgb(184 43 44)'};
+  ${(props) => props.status === 'NO ATTEMPT' && 'color: rgb(100,100,100)'};
+  ${(props) => props.status === 'NO DATA' && 'color: rgb(100,100,100)'};
+
   &::before {
     color: white;
   }

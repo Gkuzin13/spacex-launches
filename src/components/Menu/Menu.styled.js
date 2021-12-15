@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: ${({ theme }) => theme.primaryDark};
+  background: ${({ theme }) => theme.black};
   width: 55%;
   height: 100vh;
   padding: 7rem 0rem;
@@ -28,7 +28,7 @@ export const StyledMenu = styled.nav`
     font-size: 1rem;
     margin: 1.5rem 0;
     font-weight: bold;
-    color: ${({ theme }) => theme.primaryLight};
+    color: ${({ theme }) => theme.white};
     text-decoration: none;
     transition: all 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
@@ -39,7 +39,7 @@ export const StyledMenu = styled.nav`
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: white;
+        background-color: ${({ theme }) => theme.white};
         width: 100%;
         height: 1.25px;
         transition: transform 0.15s linear;

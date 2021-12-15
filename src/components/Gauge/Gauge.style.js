@@ -9,14 +9,8 @@ from {
 `;
 
 export const Container = styled.div`
-  div {
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 75%;
-  }
   svg {
-    width: 200px;
+    width: 180px;
   }
 
   path {
@@ -28,21 +22,21 @@ export const Container = styled.div`
     stroke: rgba(0, 0, 0, 0.2);
   }
 
-  path.purple {
-    stroke: rgb(50, 139, 254);
+  path.blue {
+    stroke: ${(props) => props.theme.blue};
     stroke-dasharray: 450;
     stroke-dashoffset: ${(props) => props.offset};
     animation: ${dash} 2s cubic-bezier(0.4, 0.1, 0.1, 1) forwards;
   }
 
   text {
-    fill: rgb(222, 222, 222);
+    fill: ${(props) => props.theme.gray};
     text-anchor: middle;
-    font-size: 0.5rem;
+    font-size: 0.55rem;
   }
 `;
 
 export const Digit = styled.tspan`
-  fill: white;
-  font-size: 1.25rem;
+  fill: ${(props) => props.theme.white};
+  font-size: 1.3rem;
 `;

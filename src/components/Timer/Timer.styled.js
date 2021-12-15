@@ -2,9 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 400px;
+  width: 30rem;
   text-align: center;
-  color: white;
   margin-bottom: 1.5rem;
 
   div {
@@ -18,14 +17,12 @@ export const DigitContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 7rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-right: 0.75rem;
-
-  @media (max-width: 768px) {
-    width: 6.5rem;
-  }
+  color: ${(prop) => prop.theme.gray};
 `;
 
 export const Digit = styled.span`
   font-size: 5rem;
+  color: white;
 `;

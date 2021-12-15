@@ -1,31 +1,32 @@
 import styled from 'styled-components';
 
-export const InnerSection = styled.div`
+export const Wrapper = styled.div`
   position: absolute;
+  bottom: 5%;
+  width: 100%;
+`;
+
+export const InnerSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: space-between;
-  width: auto;
-  bottom: 12%;
-  left: 25px;
-  right: 25px;
+  align-items: flex-start;
+  width: 90%;
+  height: 40vh;
+  margin: 0 auto;
   color: white;
 
   @media (min-width: 768px) {
-    bottom: 22.5%;
-    left: 120px;
-    right: 120px;
     flex-direction: row-reverse;
+    width: 75%;
+    height: 32vh;
   }
 
   h3 {
-    padding-top: 1rem;
     font-weight: normal;
   }
   h2 {
     text-transform: uppercase;
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.2rem;
   }
 `;

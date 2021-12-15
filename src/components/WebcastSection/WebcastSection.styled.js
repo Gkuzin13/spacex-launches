@@ -33,7 +33,6 @@ export const Wrapper = styled.div`
 
 export const ReturnButton = styled.button`
   padding: 0.75rem 0.5rem;
-  color: white;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 1px;
   text-align: center;
@@ -55,6 +54,7 @@ export const ReturnButton = styled.button`
   &:hover {
     color: white;
   }
+
   &:after {
     position: absolute;
     content: '';
@@ -64,13 +64,12 @@ export const ReturnButton = styled.button`
     width: 100%;
     height: 100%;
     border-radius: 1px;
-    color: white;
     z-index: -1;
-    animation: ${slideOut} 0.35s cubic-bezier(0.8, 0.5, 0.8, 0.1);
+    animation: ${slideOut} 0.15s cubic-bezier(0.8, 0.5, 0.8, 0.1);
     transform: translateX(500px) skewX(-20deg);
   }
   &:hover:after {
     background-color: black;
-    animation: ${slideIn} 0.35s cubic-bezier(0.1, 0.5, 0, 1) forwards;
+    animation: ${slideIn} 0.15s cubic-bezier(0.1, 0.5, 0, 1) forwards;
   }
 `;

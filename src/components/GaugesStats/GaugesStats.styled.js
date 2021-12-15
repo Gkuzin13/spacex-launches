@@ -5,13 +5,16 @@ export const GaugesWrapper = styled.div`
   place-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 24px;
+  gap: 32px;
   padding: 12rem 0rem;
+  width: 95%;
   height: 100vh;
+  margin: 0 auto;
 
   @media (min-width: ${({ theme }) => theme.mobile}) {
     grid-template-columns: repeat(4, 1fr);
-    height: 32rem;
-    padding: 12rem 24rem;
+    height: 350px;
+    width: 65%;
+    gap: 0px;
   }
 `;

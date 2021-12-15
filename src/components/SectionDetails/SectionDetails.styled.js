@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  padding-bottom: 4rem;
 
   button {
-    color: white;
+    ${(props) => props.open && 'color:' + props.theme.gray};
     background-color: transparent;
     border: none;
     padding: 0;
     text-align: center;
     cursor: pointer;
-    font-size: 0.9rem;
   }
 
   p {
+    color: ${(props) => (props.details ? props.theme.white : props.theme.gray)};
     font-size: 1.1rem;
     margin: 0.25rem 0;
     transition: all 0.2s cubic-bezier(0.5, 0, 0, 0.7);
