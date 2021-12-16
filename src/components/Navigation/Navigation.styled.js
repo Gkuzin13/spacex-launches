@@ -9,7 +9,7 @@ export const NavWrapper = styled.div`
   padding: 0 2.5rem;
   position: fixed;
   z-index: 99;
-  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: background-color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   ${(props) => props.userScrolled && `background-color:` + props.theme.black};
 
   @media (min-width: 768px) {

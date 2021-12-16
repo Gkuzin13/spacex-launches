@@ -11,7 +11,8 @@ export const GaugesWrapper = styled.div`
   width: 95%;
   height: 100vh;
   margin: 0 auto;
-  animation: ${fadeRevealY} 0.15s ease-in forwards 0.2s;
+  position: relative;
+  animation: ${fadeRevealY} 0.15s ease-in forwards 0.15s;
   opacity: 0;
 
   @media (min-width: ${({ theme }) => theme.mobile}) {

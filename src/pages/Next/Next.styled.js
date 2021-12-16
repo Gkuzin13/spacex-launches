@@ -16,6 +16,7 @@ export const InnerSection = styled.div`
   height: 40vh;
   margin: 0 auto;
   color: white;
+  text-transform: uppercase;
 
   @media (min-width: 768px) {
     flex-direction: row-reverse;
@@ -31,7 +32,6 @@ export const InnerSection = styled.div`
   h2 {
     animation: ${fadeRevealY} 0.15s ease-in forwards 0.2s;
     opacity: 0;
-    text-transform: uppercase;
     font-size: 3.2rem;
   }
 `;

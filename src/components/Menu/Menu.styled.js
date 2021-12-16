@@ -4,7 +4,7 @@ export const StyledMenu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: ${({ theme }) => theme.black};
+  background: black;
   width: 55%;
   height: 100vh;
   padding: 7rem 0rem;

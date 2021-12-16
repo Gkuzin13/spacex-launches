@@ -17,27 +17,15 @@ export const DigitContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 7rem;
   font-size: 0.9rem;
   margin-right: 0.75rem;
   color: ${(prop) => prop.theme.gray};
   opacity: 0;
-
-  &:nth-child(2) {
-    animation: ${fadeRevealY} 0.15s ease-in forwards 0.3s;
-  }
-  &:nth-child(3) {
-    animation: ${fadeRevealY} 0.15s ease-in forwards 0.25s;
-  }
-  &:nth-child(4) {
-    animation: ${fadeRevealY} 0.15s ease-in forwards 0.2s;
-  }
-  &:nth-child(5) {
-    animation: ${fadeRevealY} 0.15s ease-in forwards 0.15s;
-  }
+  animation: ${fadeRevealY} 0.15s ease-in forwards 0.3s;
 `;
 
 export const Digit = styled.span`
   font-size: 5rem;
+  width: 7rem;
   color: white;
 `;

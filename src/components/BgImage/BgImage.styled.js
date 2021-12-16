@@ -11,7 +11,7 @@ export const fadeIn = keyframes`
 export const BgImage = styled.div`
   background: linear-gradient(
       90deg,
-      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.35) 0%,
       rgba(0, 0, 0, 0.15) 100%
     ),
     url(${(props) => props.imgSrc});
@@ -24,5 +24,5 @@ export const BgImage = styled.div`
   width: 100%;
   min-height: 100%;
   z-index: -99;
-  animation: ${fadeIn} 0.5s cubic-bezier(0.4, 0.05, 0.155, 0.6) forwards 0.3s;
+  animation: ${fadeIn} 0.35s ease-in-out forwards 0.35s;
 `;

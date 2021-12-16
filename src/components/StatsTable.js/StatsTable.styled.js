@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeRevealY } from '../../utils/theme';
 
 export const TableWrapper = styled.div`
   display: flex;
@@ -7,6 +8,8 @@ export const TableWrapper = styled.div`
   flex-direction: column;
   position: relative;
   background-color: ${(props) => props.theme.black};
+  animation: ${fadeRevealY} 0.15s ease-in forwards 0.35s;
+  opacity: 0;
 
   @media screen and (min-width: 768px) {
     margin: 0 auto;
