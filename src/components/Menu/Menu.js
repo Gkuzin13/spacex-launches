@@ -4,12 +4,11 @@ import { useEffect } from 'react';
 
 const Menu = ({ open, setOpen }) => {
   useEffect(() => {
-    function closeMenu() {
+    const closeMenu = () => {
       setOpen(false);
-    }
+    };
 
     window.addEventListener('scroll', closeMenu);
-
     return () => window.removeEventListener('scroll', closeMenu);
   }, [setOpen]);
 
@@ -27,8 +26,8 @@ const Menu = ({ open, setOpen }) => {
           </Link>
         </li>
         <li>
-          <Link to='/history' onClick={() => setOpen(false)}>
-            LAUNCH HISTORY
+          <Link to='/stats' onClick={() => setOpen(false)}>
+            STATISTICS
           </Link>
         </li>
       </ul>

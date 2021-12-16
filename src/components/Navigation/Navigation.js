@@ -36,7 +36,7 @@ const Navigation = ({ isMobile }) => {
               <Link to='/latest'>LATEST LAUNCH</Link>
             </li>
             <li>
-              <Link to='/history'>LAUNCH HISTORY</Link>
+              <Link to='/stats'>STATISTICS</Link>
             </li>
           </ul>
         </NavStyle>
