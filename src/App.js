@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import defaultOptions from './lib/queryDefaults';
 import Next from './pages/Next/Next';
 import Latest from './pages/Latest/Latest';
-import History from './pages/History/History';
+import Stats from './pages/Stats/Stats';
 
 function App() {
   const queryClient = new QueryClient(defaultOptions);
@@ -16,7 +16,7 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path='/' element={<Next />} />
           <Route path='/latest' element={<Latest />} />
-          <Route path='/history' element={<History />} />
+          <Route path='/stats' element={<Stats />} />
           <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </AnimatePresence>
