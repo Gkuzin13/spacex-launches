@@ -10,13 +10,26 @@ import Button from '../../components/Button/Button';
 import SectionDetails from '../../components/SectionDetails/SectionDetails';
 import WebcastSection from '../../components/WebcastSection/WebcastSection';
 import Navigation from '../../components/Navigation/Navigation';
+import Error from '../../components/Error/Error';
 
 const Latest = () => {
-  const { status, data, error } = useQuery(['latest'], getLatestLaunch);
+  const { data, error } = useQuery(['latest'], getLatestLaunch);
   const [videoOpen, setVideoOpen] = useState(false);
 
   const { width } = useWindowSize();
   const isMobile = width < 768;
+
+  if (error) {
+    return (
+      <div>
+        <Error />
+      </div>
+    );
+  }
+
+  if (!data) {
+    return <div></div>;
+  }
 
   return (
     <motion.div
@@ -26,31 +39,29 @@ const Latest = () => {
       transition={{ duration: 0.3 }}>
       <BgImage imgSrc={imgSrc} />
       <Navigation isMobile={isMobile} />
-      {data && (
-        <Wrapper>
-          {videoOpen && (
-            <SectionWrapper videoOpen={videoOpen}>
-              <div>
-                <h3>WEBCAST</h3>
-                <h2>{data.name} MISSION</h2>
-                <SectionDetails data={data.details} />
-              </div>
-              <WebcastSection
-                data={data}
-                setVideoOpen={setVideoOpen}
-                videoOpen={videoOpen}
-              />
-            </SectionWrapper>
-          )}
-          {!videoOpen && (
-            <SectionWrapper>
-              <h3>LATEST LAUNCH</h3>
-              <h2>{data.name} MISSION</h2>
-              <Button text={'WATCH WEBCAST'} setVideoOpen={setVideoOpen} />
-            </SectionWrapper>
-          )}
-        </Wrapper>
-      )}
+      <Wrapper>
+        {videoOpen && (
+          <SectionWrapper videoOpen={videoOpen}>
+            <div>
+              <h3>WEBCAST</h3>
+              <h2>{data.name} mission</h2>
+              <SectionDetails data={data.details} />
+            </div>
+            <WebcastSection
+              data={data}
+              setVideoOpen={setVideoOpen}
+              videoOpen={videoOpen}
+            />
+          </SectionWrapper>
+        )}
+        {!videoOpen && (
+          <SectionWrapper>
+            <h3>LATEST LAUNCH</h3>
+            <h2>{data.name} mission</h2>
+            <Button text={'WATCH WEBCAST'} setVideoOpen={setVideoOpen} />
+          </SectionWrapper>
+        )}
+      </Wrapper>
     </motion.div>
   );
 };

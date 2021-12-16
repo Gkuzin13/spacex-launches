@@ -8,12 +8,25 @@ import Navigation from '../../components/Navigation/Navigation';
 import { InnerSection, Wrapper } from './Next.styled';
 import Timer from '../../components/Timer/Timer';
 import SectionDetails from '../../components/SectionDetails/SectionDetails';
+import Error from '../../components/Error/Error';
 
 const Next = () => {
-  const { status, data, error } = useQuery(['next'], getNextLaunch);
+  const { data, error } = useQuery(['next'], getNextLaunch);
 
   const { width } = useWindowSize();
   const isMobile = width < 768;
+
+  if (error) {
+    return (
+      <div>
+        <Error />
+      </div>
+    );
+  }
+
+  if (!data) {
+    return <div></div>;
+  }
 
   return (
     <motion.div
@@ -23,18 +36,16 @@ const Next = () => {
       transition={{ duration: 0.3 }}>
       <Navigation isMobile={isMobile} />
       <BgImage imgSrc={imageSrc} />
-      {data && (
-        <Wrapper>
-          <InnerSection>
-            <Timer date={data.date_local} />
-            <div>
-              <h3>NEXT LAUNCH</h3>
-              <h2>{data.name} MISSION</h2>
-              <SectionDetails data={data.details} />
-            </div>
-          </InnerSection>
-        </Wrapper>
-      )}
+      <Wrapper>
+        <InnerSection>
+          <Timer date={data.date_local} />
+          <div>
+            <h3>next launch</h3>
+            <h2>{data.name} mission</h2>
+            <SectionDetails data={data.details} />
+          </div>
+        </InnerSection>
+      </Wrapper>
     </motion.div>
   );
 };
