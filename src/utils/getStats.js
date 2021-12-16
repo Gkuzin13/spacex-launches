@@ -27,7 +27,7 @@ const getStats = (data) => {
   );
   const reusedBoosters = data.reduce(
     (acc, stat) => {
-      if (stat.cores[0]?.landing_success) {
+      if (stat.cores[0]?.landing_attempt) {
         if (stat.cores[0]?.reused) {
           acc.success++;
         } else {
@@ -47,7 +47,6 @@ const getStats = (data) => {
         acc.failure++;
       }
       acc.total++;
-
       return acc;
     },
     { success: 0, failure: 0, total: 0 }
