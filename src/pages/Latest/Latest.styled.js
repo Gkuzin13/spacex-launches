@@ -30,6 +30,7 @@ export const SectionWrapper = styled.div`
   height: 75vh;
   margin: 0 auto;
   animation: ${fadeIn} 1s cubic-bezier(0.175, 0.885, 0.32, 1) forwards;
+  text-transform: uppercase;
 
   div {
     width: 100%;
@@ -48,7 +49,6 @@ export const SectionWrapper = styled.div`
     opacity: 0;
   }
   h2 {
-    text-transform: uppercase;
     font-size: 3rem;
     animation: ${fadeRevealX} 0.15s ease-in forwards 0.2s;
     opacity: 0;
