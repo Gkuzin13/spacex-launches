@@ -1,5 +1,5 @@
 import { GaugesWrapper } from './GaugesStats.styled';
-import Gauge from '../Gauge/Gauge';
+import Gauge from './Gauge';
 import getStats from '../../utils/getStats';
 
 const GaugesStats = ({ data }) => {
