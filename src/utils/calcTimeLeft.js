@@ -1,8 +1,13 @@
-export const calcTimeLeft = (date) => {
+const calcTimeLeft = (date) => {
   const countdownDate = new Date(date);
   const now = new Date().getTime();
   const difference = countdownDate - now;
-  let timeLeft = {};
+  let timeLeft = {
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
 
   if (difference > 0) {
     timeLeft = {
@@ -14,3 +19,5 @@ export const calcTimeLeft = (date) => {
   }
   return timeLeft;
 };
+
+export default calcTimeLeft;
