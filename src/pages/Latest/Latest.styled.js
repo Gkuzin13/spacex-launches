@@ -12,13 +12,12 @@ const fadeIn = keyframes`
 `;
 
 export const Wrapper = styled.div`
-  position: absolute;
-  top: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-
-  @media (min-width: 768px) {
-    ${(props) => props.videoOpen && `bottom: 15%`}
-  }
+  min-height: 100vh;
+  padding-top: ${(props) => (props.videoOpen ? '12rem' : '8rem')};
 `;
 
 export const SectionWrapper = styled.div`
