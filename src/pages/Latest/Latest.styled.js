@@ -17,7 +17,10 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding-top: ${(props) => (props.videoOpen ? '12rem' : '8rem')};
+
+  @media (max-width: 768px) {
+    padding-top: ${(props) => (props.videoOpen ? '12rem' : '8rem')};
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -36,10 +39,10 @@ export const SectionWrapper = styled.div`
   }
 
   @media (min-width: 768px) {
-    height: 65vh;
+    height: 69vh;
     width: 75%;
     ${(props) => props.videoOpen && `flex-direction: row`};
-    ${(props) => props.videoOpen && `padding-top: 4rem`};
+    ${(props) => props.videoOpen && `height: 40vh`};
   }
 
   h3 {
