@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Container } from './/SectionDetails.styled';
+import { RightOutlined } from '@ant-design/icons';
 
-const SectionDetails = ({ data }) => {
-  const [open, setOpen] = useState(true);
+const SectionDetails = ({ data, initState }) => {
+  const [open, setOpen] = useState(initState);
 
   if (!data) {
     return (
@@ -15,7 +16,7 @@ const SectionDetails = ({ data }) => {
   return (
     <Container open={open} details={data && true}>
       <button onClick={() => setOpen(!open)}>
-        {open ? 'HIDE DETAILS' : 'SHOW DETAILS'}
+        <RightOutlined /> {open ? 'HIDE DETAILS' : 'SHOW DETAILS'}
       </button>
       <p>{data}</p>
     </Container>
