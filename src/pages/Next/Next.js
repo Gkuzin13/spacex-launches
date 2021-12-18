@@ -42,7 +42,7 @@ const Next = () => {
           <div>
             <h3>next launch</h3>
             <h2>{data.name} mission</h2>
-            <SectionDetails data={data.details} />
+            <SectionDetails data={data.details} initState={false} />
           </div>
         </InnerSection>
       </Wrapper>

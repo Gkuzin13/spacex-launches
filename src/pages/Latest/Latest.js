@@ -39,13 +39,13 @@ const Latest = () => {
       transition={{ duration: 0.3 }}>
       <BgImage imgSrc={imgSrc} />
       <Navigation isMobile={isMobile} />
-      <Wrapper>
+      <Wrapper videoOpen={videoOpen}>
         {videoOpen && (
           <SectionWrapper videoOpen={videoOpen}>
             <div>
               <h3>WEBCAST</h3>
               <h2>{data.name} mission</h2>
-              <SectionDetails data={data.details} />
+              <SectionDetails data={data.details} initState={true} />
             </div>
             <WebcastSection
               data={data}
