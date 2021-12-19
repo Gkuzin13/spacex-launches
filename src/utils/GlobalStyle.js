@@ -1,16 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import ExoLight from '../assets/fonts/Exo-Light.ttf';
-import ExoRegular from '../assets/fonts/Exo-Regular.ttf';
-import ExoBold from '../assets/fonts/Exo-Bold.ttf';
 
 const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'Exo';
-  src: url(${ExoLight}) format('ttf'),
-       url(${ExoRegular}) format('ttf'), 
-       url(${ExoBold}) format('ttf');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
-}
 *, *::before, *::after {
 box-sizing: border-box;
 }
@@ -25,7 +17,7 @@ html, body {
 }
 
 body {
-font-family: 'Exo', 'sans-serif';
+font-family: 'Oxygen', sans-serif;
 line-height: 1.5;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
