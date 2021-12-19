@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
-
 *, *::before, *::after {
 box-sizing: border-box;
 }
@@ -17,7 +15,7 @@ html, body {
 }
 
 body {
-font-family: 'Oxygen', sans-serif;
+font-family: 'Oxygen', 'sans-serif';
 line-height: 1.5;
 overflow-x: hidden;
 -webkit-font-smoothing: antialiased;
