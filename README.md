@@ -51,6 +51,8 @@ npm start
 
 Tested with the help of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) and [msw](https://mswjs.io)
 
+Tested with the help of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) and [msw](https://mswjs.io)
+
 ```sh
 # Run in root folder
 npm test
@@ -60,12 +62,25 @@ npm test
 
 ## Acknowledgments
 
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > 813cd468dbc3cc9fd04ce58c5eb6708691746891
+
 - [Open Source SpaceX REST API](https://github.com/r-spacex/SpaceX-API)
 - [Ant Design Icons](https://ant.design/components/icon)
 
 ## Credits
 
+<<<<<<< HEAD
+
 [Official SpaceX Flickr Photos](https://www.flickr.com/photos/spacex)
+
+=======
+[Official SpaceX Flickr Photos](https://www.flickr.com/photos/spacex)
+
+> > > > > > > 813cd468dbc3cc9fd04ce58c5eb6708691746891
 
 - [Starship SN9 High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488166)
 - [Starship High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488116)
