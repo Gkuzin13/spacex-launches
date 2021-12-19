@@ -1,6 +1,6 @@
 ## SpaceX Launches
 
-<img src="https://github.com/Gkuzin13/spacex-launches/blob/assets/stats-screenshot.png" alt="Launch statistics screenshot">
+<img src="https://github.com/Gkuzin13/spacex-launches/blob/assets/stats-screenshot.jpg" alt="Launch statistics screenshot">
 
 ## About The Project
 
