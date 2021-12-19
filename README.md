@@ -1,34 +1,13 @@
-<br />
-<p align="center">
-  <h1 align="center">SpaceX Launches</h1>
-  <p align="center">
-    <strong>A </strong>
-      <br />
-      <br />
-    <a href="https://jella-app.herokuapp.com/"><strong>🚀  View Demo</strong></a>
-    <br/>
-    <br/>
-    <a href="https://github.com/Gkuzin13/jella/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Gkuzin13/jella/issues">Request Feature</a>
-  </p>
-</p>
+## SpaceX Launches
 
-<img src="https://github.com/Gkuzin13/jella/blob/assets/jella-main.gif" alt="Jella board page">
-
-<h2 style="display: inline-block">Table of Contents</h2>
-<ol>
-  <li>
-    <a href="#about-the-project">About The Project</a>
-    <ul>
-      <li><a href="#built-with">Built With</a></li>
-    </ul>
-  </li>
-</ol>
+<img src="https://github.com/Gkuzin13/spacex-launches/blob/assets/stats-screenshot.png" alt="Launch statistics screenshot">
 
 ## About The Project
 
-### Built With
+The purpose of this project is to visualize data and statistics of SpaceX launches.<br/>
+It uses the open source SpaceX REST API which can be found [here.](https://github.com/r-spacex/SpaceX-API)
+
+## Built With
 
 - [React](https://reactjs.org)
 - [React Query](https://react-query.tanstack.com)
@@ -54,9 +33,9 @@ npm install npm@latest -g
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Gkuzin13/jella.git
+   git clone https://github.com/Gkuzin13/spacex-launches.git
    ```
-2. Install Dependencies (client & server)
+2. Install Dependencies
    ```sh
    npm install
    ```
@@ -64,15 +43,30 @@ npm install npm@latest -g
 ### Run
 
 ```sh
-# Run client (:3000)
+# Run
 npm start
 ```
 
 ### Testing
+Tested with the help of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) and [msw](https://mswjs.io)
 
 ```sh
-# Run in root folder to test the server
+# Run in root folder
 npm test
 ```
 
 <br />
+
+## Acknowledgments
+- [Open Source SpaceX REST API](https://github.com/r-spacex/SpaceX-API)
+- [Ant Design Icons](https://ant.design/components/icon)
+
+## Credits
+[Official SpaceX Flickr Photos](https://www.flickr.com/photos/spacex)
+- [Starship SN9 High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488166)
+- [Starship High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488116)
+- [Nusantara Satu Mission](https://www.flickr.com/photos/spacex/46259778995)
+
+Licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
+
+## License
