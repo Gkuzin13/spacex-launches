@@ -21,7 +21,7 @@ export const InnerSection = styled.div`
   @media (min-width: 768px) {
     flex-direction: row-reverse;
     width: 75%;
-    height: 33vh;
+    height: 34vh;
   }
 
   h3 {

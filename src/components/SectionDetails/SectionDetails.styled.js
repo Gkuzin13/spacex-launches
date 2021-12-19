@@ -26,7 +26,7 @@ export const Container = styled.div`
   p {
     color: ${(props) => (props.details ? props.theme.white : props.theme.gray)};
     margin: 0.25rem 0;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     transition: all 0.2s cubic-bezier(0.5, 0, 0, 0.7);
     opacity: ${({ open }) => (open ? '1' : '0')};
     visibility: ${({ open }) => (open ? 'visible' : 'hidden')};

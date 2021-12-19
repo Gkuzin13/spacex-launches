@@ -39,10 +39,10 @@ export const SectionWrapper = styled.div`
   }
 
   @media (min-width: 768px) {
-    height: 69vh;
+    height: 65vh;
     width: 75%;
     ${(props) => props.videoOpen && `flex-direction: row`};
-    ${(props) => props.videoOpen && `height: 40vh`};
+    ${(props) => props.videoOpen && `height: 45vh`};
   }
 
   h3 {
