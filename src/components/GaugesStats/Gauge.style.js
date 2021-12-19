@@ -30,7 +30,7 @@ export const Container = styled.div`
   }
 
   text {
-    fill: ${(props) => props.theme.gray};
+    fill: rgb(240, 240, 240);
     text-anchor: middle;
     font-size: 0.55rem;
   }
