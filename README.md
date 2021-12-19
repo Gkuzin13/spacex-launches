@@ -4,7 +4,8 @@
 
 ## About The Project
 
-The purpose of this project is to visualize data and statistics of SpaceX launches.<br/>
+A simple website where you can find information and statistics of SpaceX launches.
+
 It uses the open source SpaceX REST API which can be found [here.](https://github.com/r-spacex/SpaceX-API)
 
 ## Built With
@@ -15,11 +16,9 @@ It uses the open source SpaceX REST API which can be found [here.](https://githu
 - [styled-compoenents](https://styled-components.com)
 - [Framer Motion](https://www.framer.com/motion)
 
-<!-- GETTING STARTED -->
-
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+If you want to run it locally follow these simple steps.
 
 ### Prerequisites
 
@@ -51,41 +50,22 @@ npm start
 
 Tested with the help of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) and [msw](https://mswjs.io)
 
-Tested with the help of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) and [msw](https://mswjs.io)
-
 ```sh
 # Run in root folder
 npm test
 ```
 
-<br />
-
 ## Acknowledgments
-
-<<<<<<< HEAD
-
-=======
-
-> > > > > > > 813cd468dbc3cc9fd04ce58c5eb6708691746891
 
 - [Open Source SpaceX REST API](https://github.com/r-spacex/SpaceX-API)
 - [Ant Design Icons](https://ant.design/components/icon)
 
 ## Credits
 
-<<<<<<< HEAD
-
 [Official SpaceX Flickr Photos](https://www.flickr.com/photos/spacex)
-
-=======
-[Official SpaceX Flickr Photos](https://www.flickr.com/photos/spacex)
-
-> > > > > > > 813cd468dbc3cc9fd04ce58c5eb6708691746891
 
 - [Starship SN9 High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488166)
 - [Starship High-Altitude Flight Test](https://www.flickr.com/photos/spacex/50906488116)
 - [Nusantara Satu Mission](https://www.flickr.com/photos/spacex/46259778995)
 
 Licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-
-## License
