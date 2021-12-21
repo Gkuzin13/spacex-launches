@@ -4,7 +4,7 @@
 
 ## About The Project
 
-A simple website where you can find information and statistics of SpaceX launches.</br>
+A website where you can find information and statistics of SpaceX launches.</br>
 It uses the open source SpaceX REST API which can be found [here.](https://github.com/r-spacex/SpaceX-API)</br>
 
 ## Built With
