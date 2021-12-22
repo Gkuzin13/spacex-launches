@@ -1,7 +1,7 @@
-import { useQuery } from 'react-query';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { getAllLaunches } from '../../utils/apiClient';
-import useWindowSize from '../../hooks/useWindowSize';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchAllLaunches } from '../../features/launchesSlice';
 import { Wrapper } from './Stats.styled';
 import { BgImage } from '../../components/BgImage/BgImage.styled';
 import imgSrc from '../../assets/rocket_fog.jpg';
@@ -11,13 +11,18 @@ import Navigation from '../../components/Navigation/Navigation';
 import GaugesStats from '../../components/GaugesStats/GaugesStats';
 import ArrowDown from '../../components/ArrowDown/ArrowDown';
 
-const Stats = () => {
-  const { data, error } = useQuery(['all'], getAllLaunches);
+const Stats = ({ windowSize, isMobile }) => {
+  const dispatch = useDispatch();
+  const fetchStatus = useSelector((state) => state.allLaunches.status);
+  const { data } = useSelector((state) => state.allLaunches);
 
-  const { width, height } = useWindowSize();
-  const isMobile = width < 768;
+  useEffect(() => {
+    if (fetchStatus === 'idle') {
+      dispatch(fetchAllLaunches());
+    }
+  }, [dispatch, fetchStatus]);
 
-  if (error) {
+  if (fetchStatus === 'error') {
     return (
       <div>
         <Error />
@@ -36,10 +41,10 @@ const Stats = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}>
       <BgImage imgSrc={imgSrc} />
-      <Navigation height={height} isMobile={isMobile} />
+      <Navigation height={windowSize.height} isMobile={isMobile} />
       <Wrapper>
         <GaugesStats data={data.docs} />
-        {isMobile && <ArrowDown height={height} />}
+        {isMobile && <ArrowDown height={windowSize.height} />}
         <StatsTable data={data} isMobile={isMobile} />
       </Wrapper>
     </motion.div>

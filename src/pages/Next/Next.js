@@ -1,7 +1,6 @@
-import { useQuery } from 'react-query';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-import useWindowSize from '../../hooks/useWindowSize';
-import { getNextLaunch } from '../../utils/apiClient';
 import imageSrc from '../../assets/launch_timelapse.jpg';
 import { BgImage } from '../../components/BgImage/BgImage.styled';
 import Navigation from '../../components/Navigation/Navigation';
@@ -9,14 +8,20 @@ import { InnerSection, Wrapper } from './Next.styled';
 import Timer from '../../components/Timer/Timer';
 import SectionDetails from '../../components/SectionDetails/SectionDetails';
 import Error from '../../components/Error/Error';
+import { fetchNextLaunch } from '../../features/nextSlice';
 
-const Next = () => {
-  const { data, error } = useQuery(['next'], getNextLaunch);
+const Next = ({ isMobile }) => {
+  const dispatch = useDispatch();
+  const fetchStatus = useSelector((state) => state.nextLaunch.status);
+  const { data } = useSelector((state) => state.nextLaunch);
 
-  const { width } = useWindowSize();
-  const isMobile = width < 768;
+  useEffect(() => {
+    if (fetchStatus === 'idle') {
+      dispatch(fetchNextLaunch());
+    }
+  }, [fetchStatus, dispatch]);
 
-  if (error) {
+  if (fetchStatus === 'error') {
     return (
       <div>
         <Error />

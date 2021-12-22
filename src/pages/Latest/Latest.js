@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { useQuery } from 'react-query';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { motion } from 'framer-motion';
-import useWindowSize from '../../hooks/useWindowSize';
-import { getLatestLaunch } from '../../utils/apiClient';
+import { fetchLatestLaunch } from '../../features/latestSlice';
 import { BgImage } from '../../components/BgImage/BgImage.styled';
 import imgSrc from '../../assets/rockets_sunset.jpg';
 import { SectionWrapper, Wrapper } from './Latest.styled';
@@ -12,14 +11,19 @@ import WebcastSection from '../../components/WebcastSection/WebcastSection';
 import Navigation from '../../components/Navigation/Navigation';
 import Error from '../../components/Error/Error';
 
-const Latest = () => {
-  const { data, error } = useQuery(['latest'], getLatestLaunch);
+const Latest = ({ isMobile }) => {
   const [videoOpen, setVideoOpen] = useState(false);
+  const dispatch = useDispatch();
+  const fetchStatus = useSelector((state) => state.latestLaunch.status);
+  const { data } = useSelector((state) => state.latestLaunch);
 
-  const { width } = useWindowSize();
-  const isMobile = width < 768;
+  useEffect(() => {
+    if (fetchStatus === 'idle') {
+      dispatch(fetchLatestLaunch());
+    }
+  }, [dispatch, fetchStatus]);
 
-  if (error) {
+  if (fetchStatus === 'error') {
     return (
       <div>
         <Error />
