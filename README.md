@@ -10,7 +10,7 @@ It uses the open source SpaceX REST API which can be found [here.](https://githu
 ## Built With
 
 - [React](https://reactjs.org)
-- [React Query](https://react-query.tanstack.com)
+- [Redux](https://redux.js.org)
 - [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview)
 - [styled-compoenents](https://styled-components.com)
 - [Framer Motion](https://www.framer.com/motion)
