@@ -1,20 +1,18 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import { QueryClientProvider, QueryClient } from 'react-query';
-import defaultOptions from '../lib/queryDefaults';
+import { Provider } from 'react-redux';
+import store from '../app/store';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import App from '../App';
 
 export const renderWithRouter = (history) => {
-  const queryClient = new QueryClient(defaultOptions);
-
   return render(
-    <QueryClientProvider client={queryClient}>
+    <Provider store={store}>
       <Router location={history.location} navigator={history}>
         <App></App>
       </Router>
-    </QueryClientProvider>
+    </Provider>
   );
 };
 
